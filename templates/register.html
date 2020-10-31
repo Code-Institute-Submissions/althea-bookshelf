@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="center-align">Register</h3>
+<h3 class="center-align register">Register</h3>
 
 <div class="row">
     <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
@@ -10,7 +10,7 @@
             <!-- username -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-user-plus light-blue-text text-darken-4 prefix"></i>
+                    <i class="fas fa-user-plus light-blue-text prefix"></i>
                     <input id="username" name="username" type="text" minlength="5" 
                         maxlength="20" pattern="^[a-zA-Z0-9]{5,20}$" class="validate" required>
                     <label for="username">Username</label>
@@ -20,7 +20,7 @@
             <!-- password -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-user-lock light-blue-text text-darken-4 prefix"></i>
+                    <i class="fas fa-user-lock light-blue-text prefix"></i>
                     <input id="password" name="password" type="password" minlength="5" 
                         maxlength="20" pattern="^[a-zA-Z0-9]{5,20}$" class="validate" required>
                     <label for="password">Password</label>
@@ -30,17 +30,17 @@
             <!-- little angel's name -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-user-plus light-blue-text text-darken-4 prefix"></i>
-                    <input id="little_angel" name="little_angel" type="text" minlength="5" 
+                    <i class="fas fa-child light-blue-text prefix"></i>
+                    <input id="angel_name" name="angel_name" type="text" minlength="5" 
                         maxlength="20" pattern="^[a-zA-Z]{5,20}$" class="validate" required>
-                    <label for="little_angel">Little Angel's Name</label>
+                    <label for="angel_name">Little Angel's Name</label>
                 </div>
             </div>
 
             <!-- little angel's age -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-user-plus light-blue-text text-darken-4 prefix"></i>
+                    <i class="fas fa-hashtag light-blue-text prefix"></i>
                     <input id="angel_age" name="angel_age" type="text" minlength="0" 
                         maxlength="2" pattern="^[0-9]{0,2}$" class="validate" required>
                     <label for="angel_age">Little Angel's Age</label>
@@ -49,7 +49,7 @@
 
             <!-- register button -->
             <div class="row">
-                <button type="submit" class="col s12 btn-large light-blue darken-4 text-shadow">
+                <button type="submit" class="col s12 btn-large orange accent-3 text-shadow">
                     Register <i class="fas fa-sign-in-alt"></i>
                 </button>
             </div>
@@ -60,9 +60,9 @@
 
 <div class="row">
     <div class="col s12">
-        <p class="center-align">
+        <p class="center-align register">
             Already Registered?
-            <a href="{{ url_for('login') }}" class="light-blue-text text-darken-4">Log In</a>
+            <a href="{{ url_for('login') }}" class="orange-text">Log In</a>
         </p>
     </div>
 </div>
