@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+    
+    {% for book in books %}
+        {{ book.book_title }}<br>
+        {{ book.book_author }}<br>
+        {{ book.book_review }}<br>
+        {{ book.fun_meter }}<br>
+        {{ book.date_posted }}<br>
+        {{ book.is_recommend }}<br>
+    {% endfor %}
+
+{% endblock %}
