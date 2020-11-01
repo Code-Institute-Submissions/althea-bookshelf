@@ -21,7 +21,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_books")
 def get_books():
-    books = mongo.db.books.find()
+    books = list(mongo.db.books.find())
     return render_template("books.html", books=books)
 
 
@@ -101,6 +101,11 @@ def logout():
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+@app.route("/add_book")
+def add_book():
+    return render_template("add_books.html")
 
 
 if __name__ == "__main__":

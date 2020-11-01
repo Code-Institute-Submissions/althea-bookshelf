@@ -1,13 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
     
-    {% for book in books %}
-        {{ book.book_title }}<br>
-        {{ book.book_author }}<br>
-        {{ book.book_review }}<br>
-        {{ book.fun_meter }}<br>
-        {{ book.date_posted }}<br>
-        {{ book.is_recommend }}<br>
-    {% endfor %}
+    
+
+    <ul class="collapsible popout">
+        {% for book in books %}
+        <li>
+            <div class="collapsible-header white-text orange accent-3 text-shadow">
+                <i class="fas fa-caret-down"></i>
+                <p>Title of Book: <span><strong>{{ book.book_title }}</strong></span></p>
+                {% if book.is_recommend == "on" %}
+                    <i class="fas fa-exclamation-circle light-blue-text text-lighten-2 tooltipped"
+                        data-position="right" data-tooltip="Recommended"></i>
+                {% endif %}
+            </div>            
+            <div class="collapsible-body">
+                <p>Author: <span>{{ book.book_author }}</span></p>                
+                <p>What makes it a Fun Book: <br>{{ book.book_review }}</p>
+                <p>Fun Meter: <span>{{ book.fun_meter }}</span></p>
+                <p>Date Posted: <span>{{ book.date_posted }}</span></p>                
+            </div>
+        </li>        
+        {% endfor %}
+    </ul>
 
 {% endblock %}

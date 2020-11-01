@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="center-align register">Add Book</h3>
+
+    <div class="row card-panel grey lighten-5">
+        <form class="col s12" method="POST" action=""> 
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-pencil-alt prefix light-blue-text"></i>
+                    <input id="book_title" name="book_title" minlength="5" 
+                        maxlength="30" type="text" class="validate" required>
+                    <label for="book_title">Title of Book</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-pencil-alt prefix light-blue-text"></i>
+                    <input id="book_author" name="book_author" minlength="5" 
+                        maxlength="30" type="text" class="validate" required>
+                    <label for="book_author">Author (if applicable)</label>
+                </div>
+            </div>
+
+            <div class="row">  
+                <div class="input-field col s12">
+                    <i class="fas fa-align-left prefix light-blue-text"></i>                                                  
+                    <textarea id="book_review" name="book_review" minlength="5"
+                        maxlength="200" class="materialize-textarea"></textarea>
+                    <label for="book_review">What makes it a Fun Book</label>                   
+                </div>
+            </div>
+
+             <div class="row">  
+                <div class="input-field col s12">
+                    <i class="fas fa-pencil-alt prefix light-blue-text"></i>                                                  
+                    <input id="fun_meter" name="fun_meter" minlength="1" type="text"
+                        maxlength="1" pattern="^[0-9]{1,1}$" class="validate" required>
+                    <label for="fun_meter">Fun Meter ( rate from 1-lowest to 5-highest)</label>                   
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-calendar-alt prefix light-blue-text"></i>
+                    <input id="date_posted" name="date_posted" type="text" class="datepicker validate" required>
+                    <label for="date_posted">Date Posted</label>
+                </div>
+            </div>            
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <div class="switch">
+                        <i class="fas fa-exclamation-circle prefix light-blue-text"></i> 
+                        <label for="is_recommended">                        
+                            <input type="checkbox" id="is_recommended" name="is_recommended" >
+                            <span class="lever"></span>
+                            Do you recommend?
+                        </label>
+                     </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+        
+
+{% endblock %}
