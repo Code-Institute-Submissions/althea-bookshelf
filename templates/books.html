@@ -9,8 +9,10 @@
             <div class="collapsible-header white-text orange accent-3 text-shadow">
                 <div class="col s3">
                     <i class="fas fa-caret-down"></i>
-                    <a href="" class="btn-small green accent-4">Remove Book</a>
-                    <a href="{{ url_for('edit_book', book_id=book._id) }}" class="btn-small light-blue accent-4">Edit Book</a>
+                    {% if session.user|lower == book.fun_viewed|lower %}
+                        <a href="" class="btn-small green accent-4">Remove Book</a>
+                        <a href="{{ url_for('edit_book', book_id=book._id) }}" class="btn-small light-blue accent-4">Edit Book</a>
+                    {% endif %}
                 </div>
                 <div class="col s9">
                     <strong>{{ book.book_title }}</strong>
