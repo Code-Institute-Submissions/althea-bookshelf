@@ -103,10 +103,29 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_book")
+@app.route("/add_book", methods=["GET", "POST"])
 def add_book():
+    if request.method == "POST":
+        is_recommend = "on" if request.form.get("is_recommend") else "off"
+        book = {
+            "book_title": request.form.get("book_title"),
+            "book_author": request.form.get("book_author"),
+            "book_review": request.form.get("book_review"),
+            "fun_meter": request.form.get("fun_meter"),
+            "is_recommend": is_recommend,
+            "date_posted": request.form.get("date_posted"),
+            "fun_viewed": session["user"]
+        }
+        mongo.db.books.insert_one(book)
+        flash("Thank you for your contribution!")
+        return redirect(url_for("get_books"))
     return render_template("add_books.html")
 
+
+@app.route("/edit_book/<book_id>", methods=["GET", "POST"])
+def edit_book(book_id):
+    book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
+    return render_template("edit_book.html", book=book)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
