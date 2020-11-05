@@ -10,4 +10,5 @@ $(document).ready(function(){
             done: "Select"
         }
     });
+    $('.modal').modal();
   });

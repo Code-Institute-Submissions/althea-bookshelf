@@ -18,6 +18,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+# Function and route to Home Page
 @app.route("/")
 @app.route("/get_books")
 def get_books():
@@ -25,6 +26,7 @@ def get_books():
     return render_template("books.html", books=books)
 
 
+# Function and route to create a new user
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -53,6 +55,7 @@ def register():
     return render_template("register.html")
 
 
+# Function and route for user to login
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -80,6 +83,7 @@ def login():
     return render_template("login.html")
 
 
+# Function and route to display user's profile
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grab the session user's username in db
@@ -95,6 +99,7 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+# Function and route for user to logout
 @app.route("/logout")
 def logout():
     # remove user from session cookies
@@ -103,6 +108,7 @@ def logout():
     return redirect(url_for("login"))
 
 
+# Function and route to add books
 @app.route("/add_book", methods=["GET", "POST"])
 def add_book():
     if request.method == "POST":
@@ -122,6 +128,7 @@ def add_book():
     return render_template("add_books.html")
 
 
+# Function and route to update book
 @app.route("/edit_book/<book_id>", methods=["GET", "POST"])
 def edit_book(book_id):
     if request.method == "POST":
@@ -140,6 +147,36 @@ def edit_book(book_id):
 
     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
     return render_template("edit_book.html", book=book)
+
+
+# Function and route to delete book
+@app.route("/remove_book/<book_id>")
+def remove_book(book_id):
+    mongo.db.books.remove({"_id": ObjectId(book_id)})
+    flash("Book Successfully Removed")
+    return redirect(url_for("get_books"))
+
+
+# Function and route for the user to add review on a book
+@app.route("/add_review/<book_id>", methods=["GET", "POST"])
+def add_review(book_id):
+    # Get the ID of the book the user wants to review
+    book = list(mongo.db.books.find_one({"_id": ObjectId(book_id)}))
+    if request.method == "POST":
+        # New review is saved in the correct format
+        new_review = {
+            "title": book["book_title"],
+            "user_review": request.form.get("user_review"),
+            "review_rate": request.form.get("review_rate"),
+            "fun_viewed": session["user"]
+        }
+        # Review is added
+        mongo.db.review.insert_one(new_review)
+        flash("Review Added")
+        return redirect(url_for("get_books"))
+
+    return render_template("add_review.html", book=book)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

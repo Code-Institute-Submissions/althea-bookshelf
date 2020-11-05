@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
     
-    <h3 class="center-align register">All Books</h3>
+    <h4 class="center-align register">These are the books best recommended by our little angels. </h4>
 
     <ul class="collapsible popout">
         {% for book in books %}
@@ -10,8 +10,19 @@
                 <div class="col s3">
                     <i class="fas fa-caret-down"></i>
                     {% if session.user|lower == book.fun_viewed|lower %}
-                        <a href="" class="btn-small green accent-4">Remove Book</a>
+                        <a href="{{ url_for('remove_book', book_id=book._id) }}" class="btn-small green accent-4 modal-trigger" button data-target="modal1">Remove Book</a>
                         <a href="{{ url_for('edit_book', book_id=book._id) }}" class="btn-small light-blue accent-4">Edit Book</a>
+
+                        <!-- modal body -->
+                        <div id="modal1" class="modal">
+                            <div class="modal-content">
+                                <h4>Are you sure you want to remove this book?</h4>                                
+                            </div>
+                            <div class="modal-footer">
+                                <a href="{{ url_for('remove_book', book_id=book._id) }}" class="modal-close">Delete</a>
+                                <a href="{{ url_for('get_books') }}" class="modal-close btn-flat">Cancel</a>
+                            </div>
+                        </div>
                     {% endif %}
                 </div>
                 <div class="col s9">
@@ -29,6 +40,14 @@
                 <p>Fun Meter: <span>{{ book.fun_meter }}</span></p>
                 <p>Date Posted: <span>{{ book.date_posted }}</span></p>      
                 <p><em> FunViewed by: {{ book.fun_viewed }}</em></p>          
+                
+                <div class="row">
+                
+                <!-- add a review --> 
+                                             
+                <a href="{{ url_for('add_review', book_id=book._id) }}" class="btn-small green accent-4">Add a Review</a>
+                
+                </div>
             </div>
         </li>        
         {% endfor %}
