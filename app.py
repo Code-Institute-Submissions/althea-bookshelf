@@ -117,7 +117,7 @@ def delete_profile(critics_id):
 # Function and route for user to logout
 @app.route("/logout")
 def logout():
-    # remove user from session cookies    
+    # remove user from session cookies
     session.pop("user")
     return redirect(url_for("login"))
 

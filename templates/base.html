@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
         integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" type="text/css">    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" 
+        type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     {% block styles %}
     {% endblock %}
     <title>Althea's BookShelf</title>
+
 </head>
 <body>
 
     <header>
-    <!-- main navbar -->
+        <div class="navbar-bg">
+            <div class="no-bottom-mg hide-on-med-and-down">
+                <h1 class="title white-text no-bottom-mg no-top-mg">
+                    <a href="{{ url_for('get_books') }}">
+                    Althea's BookShelf
+                    </a>
+                </h1>
+            </div>    
+        </div>
+
+        <!-- main navbar -->
         <nav class="nav-extended text-shadow orange accent-3">
             <div class="nav-wrapper">
-            <a href="{{ url_for('get_books') }}" class="brand-logo">Althea's BookShelf</a>
+            <!-- <a href="{{ url_for('get_books') }}" class="brand-logo">Althea's BookShelf</a> -->
             <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('get_books') }}">Home</a></li>
@@ -35,7 +48,13 @@
 
         <!-- mobile sidenav -->
         <ul class="sidenav" id="mobile-demo">
-            <li><h4 class="center-align light-blue-text text-darken-4">Althea's BookShelf</h4></li>
+            <li>
+                <h4 class="center-align light-blue-text text-darken-4">
+                    <a href="{{ url_for('get_books') }}">
+                    Althea's BookShelf
+                    </a>
+                </h4>
+            </li>
             <li><a href="{{ url_for('get_books') }}">Home</a></li>
             {% if session.user %}
                 <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
