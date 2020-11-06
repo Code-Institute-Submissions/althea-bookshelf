@@ -99,11 +99,25 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+# Function and route to delete profile
+@app.route("/delete_profile/<critics_id>")
+def delete_profile(critics_id):
+    # Remove session user's profile from the db
+    mongo.db.critics.remove({"username": session["user"]})
+    mongo.db.books.remove({"book_title": session["user"]})
+    mongo.db.books.remove({"book_author": session["user"]})
+    mongo.db.books.remove({"book_review": session["user"]})
+    mongo.db.books.remove({"fun_meter": session["user"]})
+    mongo.db.books.remove({"date_posted": session["user"]})
+    mongo.db.books.remove({"fun_viewed": session["user"]})
+    flash("Profile Successfully Deleted")
+    return redirect(url_for("logout"))
+
+
 # Function and route for user to logout
 @app.route("/logout")
 def logout():
-    # remove user from session cookies
-    flash("You have been logged out")
+    # remove user from session cookies    
     session.pop("user")
     return redirect(url_for("login"))
 
