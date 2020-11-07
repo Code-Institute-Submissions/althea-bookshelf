@@ -87,14 +87,32 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grab the session user's username in db
-    username = mongo.db.critics.find_one({"username": session["user"]})["username"].capitalize()
-    angel_name = mongo.db.critics.find_one({"username": session["user"]})["angel_name"].capitalize()
-    angel_age = mongo.db.critics.find_one({"username": session["user"]})["angel_age"]
+    username = mongo.db.critics.find_one(
+        {"username": session["user"]})["username"].capitalize()
+    angel_name = mongo.db.critics.find_one(
+        {"username": session["user"]})["angel_name"].capitalize()
+    angel_age = mongo.db.critics.find_one(
+        {"username": session["user"]})["angel_age"]
+
+    # grab the user's reviewed books
+    book_title = mongo.db.books.find_one(
+        {"username": session["user"]})["book_title"]
+    book_author = mongo.db.books.find_one(
+        {"username": session["user"]})["book_author"]
+    book_review = mongo.db.books.find_one(
+        {"username": session["user"]})["book_review"]
+    is_recommend = mongo.db.books.find_one(
+        {"username": session["user"]})["is_recommend"]
+    date_posted = mongo.db.books.find_one(
+        {"username": session["user"]})["date_posted"]
 
     if session["user"]:
         return render_template(
             "profile.html", username=username,
-            angel_name=angel_name, angel_age=angel_age)
+            angel_name=angel_name, angel_age=angel_age,
+            book_title=book_title, book_author=book_author,
+            book_review=book_review, is_recommend=is_recommend,
+            date_posted=date_posted)
 
     return redirect(url_for("login"))
 
@@ -134,7 +152,8 @@ def add_book():
             "fun_meter": request.form.get("fun_meter"),
             "is_recommend": is_recommend,
             "date_posted": request.form.get("date_posted"),
-            "fun_viewed": session["user"]
+            "fun_viewed": session["user"],
+            "username": request.form.get("username")
         }
         mongo.db.books.insert_one(book)
         flash("Thank you for your contribution!")
@@ -154,7 +173,8 @@ def edit_book(book_id):
             "fun_meter": request.form.get("fun_meter"),
             "is_recommend": is_recommend,
             "date_posted": request.form.get("date_posted"),
-            "fun_viewed": session["user"]
+            "fun_viewed": session["user"],
+            "username": request.form.get("username")
         }
         mongo.db.books.update({"_id": ObjectId(book_id)}, review)
         flash("Book review is updated!")
