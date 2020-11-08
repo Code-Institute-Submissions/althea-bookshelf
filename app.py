@@ -95,16 +95,20 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grab the session user's username in db
-    username = mongo.db.critics.find_one(
-        {"username": session["user"]})
+    angel_name = mongo.db.critics.find_one(
+        {"username": session["user"]})["angel_name"].capitalize()
+    angel_age = mongo.db.critics.find_one(
+        {"username": session["user"]})["angel_age"]
 
     # grab the user's reviewed books
+    books = list(mongo.db.books.find())
     username = mongo.db.books.find_one(
         {"username": session["user"]})
 
     if session["user"]:
         return render_template(
-            "profile.html", username=username)
+            "profile.html", username=username,
+            angel_name=angel_name, angel_age=angel_age, books=books)
 
     return redirect(url_for("login"))
 
@@ -114,6 +118,7 @@ def profile(username):
 def delete_profile(critics_id):
     # Remove session user's profile from the db
     mongo.db.critics.remove({"username": session["user"]})
+    # Remove session user's books from the db
     mongo.db.books.remove({"username": session["user"]})
     flash("Profile Successfully Deleted")
     return redirect(url_for("logout"))
@@ -168,7 +173,7 @@ def edit_book(book_id):
     return render_template("edit_book.html", book=book)
 
 
-# Function and route to delete book
+# Function and route to delete a book
 @app.route("/remove_book/<book_id>")
 def remove_book(book_id):
     mongo.db.books.remove({"_id": ObjectId(book_id)})

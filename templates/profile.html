@@ -2,17 +2,17 @@
 {% block content %}
 
 
-    <div class="row">
+    <div class="row">        
         <div class="col s12 m8 offset-m2">
             <!-- displays profile details -->
             <div class="card-panel">                       
                 <h3 class="center-align light-blue-text text-darken-4">
                     Little Angel's Name:<br>
-                    {{ username.angel_name }}
+                    {{ angel_name }}
                 </h3>
                 <h3 class="center-align light-blue-text text-darken-4">
                     Age: <br>
-                    {{ username.angel_age }}
+                    {{ angel_age }}
                 </h3>
 
                 <!-- to delete a profile -->
@@ -27,62 +27,57 @@
             </div>
         </div>
 
+        <!-- modal to delete account -->
+        <div id="delete-profile" class="modal delete-modal">
+            <div class="modal-content">
+                <h3 class="center-align">Delete Profile</h3>
+                <p class="center-align">Are you sure you want to delete your account?</p>
+                <p class="center-align">All of your data will be lost.</p>
+                
+                <div class="row">
+                    <div class="col s6 center-align">
+                        <a class="btn waves-light waves-effect yellow"
+                            href="{{ url_for('delete_profile', critics_id=session['user']) }}">
+                        DELETE
+                        </a>
+                    </div>
+                    <div class="col s6 center-align">
+                        <a href="#!" class="modal-close btn waves-light waves-effect btn blue">
+                        CANCEL
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
             <!-- displays reviewed books -->
             <h3 class="center-align register">Books Reviewed</h3>
 
             <ul class="collapsible">
-            
+               {% for book in books %}
+               {% if session.user|lower == book.username|lower %}
                 <li>
                     <div class="collapsible-header white-text orange accent-3 text-shadow"> 
                             
                         <h3 class="center-align light-blue-text text-darken-4">
-                            {{ username.book_title }} <br> {{ username.book_author }}
+                            {{ book.book_title }} <span> {{ book.book_author }} </span>
                         </h3>                                   
                         
                     </div>
 
                     <div class="collapsible-body">
                         <h3 class="center-align light-blue-text text-darken-4">
-                            {{ username.book_review }}
-                        </h3>
-                        <h3 class="center-align light-blue-text text-darken-4">
-                            {{ username.is_recommend }}
-                        </h3>
-                        <h3 class="center-align light-blue-text text-darken-4">
-                            {{ username.date_posted }}
-                        </h3>                       
-                        
+                            {{ book.book_review }}
+                        </h3>                                                                    
                     </div>
                 </li>
-                
+                {% endif %}
+                {% endfor %}
             </ul>
         </div>
     </div>
 
 
 
-    <!-- modal to delete account -->
-    <div id="delete-profile" class="modal delete-modal">
-        <div class="modal-content">
-            <h3 class="center-align">Delete Profile</h3>
-            <p class="center-align">Are you sure you want to delete your account?</p>
-            <p class="center-align">All of your data will be lost.</p>
-            
-            <div class="row">
-                <div class="col s6 center-align">
-                    <a class="btn waves-light waves-effect yellow"
-                        href="{{ url_for('delete_profile', critics_id=session['username']) }}">
-                    DELETE
-                    </a>
-                </div>
-                <div class="col s6 center-align">
-                    <a href="#!" class="modal-close btn waves-light waves-effect btn blue">
-                    CANCEL
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    
 {% endblock %}
