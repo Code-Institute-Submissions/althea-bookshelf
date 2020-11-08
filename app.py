@@ -96,31 +96,15 @@ def login():
 def profile(username):
     # grab the session user's username in db
     username = mongo.db.critics.find_one(
-        {"username": session["user"]})["username"].capitalize()
-    angel_name = mongo.db.critics.find_one(
-        {"username": session["user"]})["angel_name"].capitalize()
-    angel_age = mongo.db.critics.find_one(
-        {"username": session["user"]})["angel_age"]
+        {"username": session["user"]})
 
     # grab the user's reviewed books
-    book_title = mongo.db.books.find_one(
-        {"username": session["user"]})["book_title"]
-    book_author = mongo.db.books.find_one(
-        {"username": session["user"]})["book_author"]
-    book_review = mongo.db.books.find_one(
-        {"username": session["user"]})["book_review"]
-    is_recommend = mongo.db.books.find_one(
-        {"username": session["user"]})["is_recommend"]
-    date_posted = mongo.db.books.find_one(
-        {"username": session["user"]})["date_posted"]
+    username = mongo.db.books.find_one(
+        {"username": session["user"]})
 
     if session["user"]:
         return render_template(
-            "profile.html", username=username,
-            angel_name=angel_name, angel_age=angel_age,
-            book_title=book_title, book_author=book_author,
-            book_review=book_review, is_recommend=is_recommend,
-            date_posted=date_posted)
+            "profile.html", username=username)
 
     return redirect(url_for("login"))
 
