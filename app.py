@@ -26,6 +26,14 @@ def get_books():
     return render_template("books.html", books=books)
 
 
+# Function and route to add search functionality
+@app.route("/seach", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    books = list(mongo.db.books.find({"$text": {"$search": query}}))
+    return render_template("books.html", books=books)
+
+
 # Function and route to create a new user
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -72,12 +80,12 @@ def login():
 
             else:
                 # invalid password match
-                flash("incorrect Username and/or Password")
+                flash("Invalid Username and/or Password")
                 return redirect(url_for("login"))
 
         else:
             # username doesn't exists
-            flash("incorrect Username and/or Password")
+            flash("Invalid Username and/or Password")
             return redirect(url_for("login"))
 
     return render_template("login.html")
@@ -122,12 +130,7 @@ def profile(username):
 def delete_profile(critics_id):
     # Remove session user's profile from the db
     mongo.db.critics.remove({"username": session["user"]})
-    mongo.db.books.remove({"book_title": session["user"]})
-    mongo.db.books.remove({"book_author": session["user"]})
-    mongo.db.books.remove({"book_review": session["user"]})
-    mongo.db.books.remove({"fun_meter": session["user"]})
-    mongo.db.books.remove({"date_posted": session["user"]})
-    mongo.db.books.remove({"fun_viewed": session["user"]})
+    mongo.db.books.remove({"username": session["user"]})
     flash("Profile Successfully Deleted")
     return redirect(url_for("logout"))
 
@@ -152,8 +155,7 @@ def add_book():
             "fun_meter": request.form.get("fun_meter"),
             "is_recommend": is_recommend,
             "date_posted": request.form.get("date_posted"),
-            "fun_viewed": session["user"],
-            "username": request.form.get("username")
+            "username": session["user"]
         }
         mongo.db.books.insert_one(book)
         flash("Thank you for your contribution!")
@@ -173,8 +175,7 @@ def edit_book(book_id):
             "fun_meter": request.form.get("fun_meter"),
             "is_recommend": is_recommend,
             "date_posted": request.form.get("date_posted"),
-            "fun_viewed": session["user"],
-            "username": request.form.get("username")
+            "username": session["user"]
         }
         mongo.db.books.update({"_id": ObjectId(book_id)}, review)
         flash("Book review is updated!")
@@ -202,7 +203,7 @@ def add_review(book_id):
             "title": book["book_title"],
             "user_review": request.form.get("user_review"),
             "review_rate": request.form.get("review_rate"),
-            "fun_viewed": session["user"]
+            "username": session["user"]
         }
         # Review is added
         mongo.db.review.insert_one(new_review)
@@ -210,7 +211,6 @@ def add_review(book_id):
         return redirect(url_for("get_books"))
 
     return render_template("add_review.html", book=book)
-
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

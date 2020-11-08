@@ -17,6 +17,7 @@
 <body>
 
     <header>
+    <div class="container">
         <div class="navbar-bg">
             <div class="no-bottom-mg hide-on-med-and-down">
                 <h1 class="title white-text no-bottom-mg no-top-mg">
@@ -65,6 +66,7 @@
                 <li><a href="{{ url_for('register') }}">Register</a></li>
             {% endif %}
         </ul>
+    </div>
     </header>
     
     <section>
@@ -85,27 +87,24 @@
         {% endblock %}
     </main>
 
-    <footer class="page-footer black">
+    <footer>
         <div class="container">
             <div class="row">
-                <div class="col l6 s12">
-                    <h2 id="footer-heading" class="white-text no-top-mg">We're on social media!</h2>
-                    <p id="footer-info" class="grey-text text-lighten-4">Don't forget to keep in touch with your team
-                        mates on social
-                        media.</p>
+                <div class="col m3">
+                    <h2 id="footer-heading" class="no-top-mg">Althea's BookShelf</h2>                   
                 </div>
                 <div class="col l4 offset-l2 s12">
                     <ul class="center-align">
-                        <li class="small-bottom-mg"><a class="grey-text text-lighten-3" target="_blank"
+                        <li class="small-bottom-mg"><a class="text-lighten-3" target="_blank"
                                 href="https://www.facebook.com"><i aria-hidden="true"
                                     class="fa-lg fab fa-facebook"></i></a></li>
-                        <li class="small-bottom-mg"><a class="grey-text text-lighten-3" target="_blank"
+                        <li class="small-bottom-mg"><a class="text-lighten-3" target="_blank"
                                 href="https://www.twitter.com"><i aria-hidden="true"
                                     class="fa-lg fab fa-twitter"></i></a></li>
-                        <li class="small-bottom-mg"><a class="grey-text text-lighten-3" target="_blank"
+                        <li class="small-bottom-mg"><a class="text-lighten-3" target="_blank"
                                 href="https://www.snapchat.com"><i aria-hidden="true"
                                     class="fa-lg fab fa-snapchat"></i></a></li>
-                        <li class="small-bottom-mg"><a class="grey-text text-lighten-3" target="_blank"
+                        <li class="small-bottom-mg"><a class="text-lighten-3" target="_blank"
                                 href="https://www.linkedin.com"><i aria-hidden="true"
                                     class="fa-lg fab fa-linkedin"></i></a></li>
                     </ul>
@@ -114,7 +113,7 @@
         </div>
         <div class="footer-copyright">
             <div class="container">
-                <span id="admin">©</span> 2020 Copyright The Running Team
+                <span id="admin">©</span> 2020 Copyright Althea's BookShelf
             </div>
         </div>
     </footer>
