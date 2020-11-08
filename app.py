@@ -23,7 +23,8 @@ mongo = PyMongo(app)
 @app.route("/get_books")
 def get_books():
     books = list(mongo.db.books.find())
-    return render_template("books.html", books=books)
+    review = list(mongo.db.review.find())
+    return render_template("books.html", books=books, review=review)
 
 
 # Function and route to add search functionality
@@ -185,7 +186,7 @@ def remove_book(book_id):
 @app.route("/add_review/<book_id>", methods=["GET", "POST"])
 def add_review(book_id):
     # Get the ID of the book the user wants to review
-    book = list(mongo.db.books.find_one({"_id": ObjectId(book_id)}))
+    book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
     if request.method == "POST":
         # New review is saved in the correct format
         new_review = {
