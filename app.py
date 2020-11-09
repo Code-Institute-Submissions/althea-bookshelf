@@ -192,7 +192,6 @@ def add_review(book_id):
         new_review = {
             "title": book["book_title"],
             "user_review": request.form.get("user_review"),
-            "review_rate": request.form.get("review_rate"),
             "username": session["user"]
         }
         # Review is added
@@ -201,6 +200,16 @@ def add_review(book_id):
         return redirect(url_for("get_books"))
 
     return render_template("add_review.html", book=book)
+
+
+# Function and route to delete a book review
+@app.route("/remove_review/<review_id>")
+def remove_review(review_id):
+    mongo.db.review.remove({"_id": ObjectId(review_id)})
+    flash("Book Successfully Removed")
+    return redirect(url_for("get_books"))
+
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

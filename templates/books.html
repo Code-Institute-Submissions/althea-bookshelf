@@ -64,7 +64,7 @@
                
             </div>
 
-            <!-- adding other details -->            
+            <!-- adding other details of the book -->            
             <div class="collapsible-body">
                 <p>Author: <span>{{ book.book_author }}</span></p>                
                 <p>What makes it a Fun Book: <br>{{ book.book_review }}</p>
@@ -75,15 +75,31 @@
                 <!-- adding a review on the books --> 
                 <div class="row">
                     {% if session.user %}
-                        {% for reviews in review %}
-                            {% if reviews.username == session.user %}                            
-
+                        {% for reviews in review %}     
+                            {% if reviews.title==book.book_title %}
+                                           
                             <div>
                                 <p><span>Reviewed by:</span> {{ reviews.username }}</p>
                                 <p><span>Book Review:</span> {{ reviews.user_review }}</p>
                             </div>                               
-                                
-                            {% endif %}    
+                            
+                            {% if reviews.username==session.user %}
+                                <a href="#delete{{ loop.index }}" class="btn-small green accent-4 waves-effect waves-light                  modal-trigger">
+                                    Delete Review
+                                </a>
+
+                                <!-- modal body for removing a review -->
+                                <div id="delete{{ loop.index }}" class="modal">
+                                    <div class="modal-content">
+                                        <h4>Are you sure you want to delete your review?</h4>                                
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="{{ url_for('remove_review', review_id=reviews._id) }}" class="btn waves-light waves-effect yellow">Delete</a>
+                                        <a href="#!" class="modal-close btn waves-light waves-effect  blue">Cancel</a>
+                                    </div>
+                                </div>
+                                {% endif %}
+                                {% endif %}                             
                         {% endfor %}   
                         
                             <!-- add a review button -->
