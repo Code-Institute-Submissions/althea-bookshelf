@@ -1,4 +1,8 @@
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
@@ -16,6 +20,12 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
+
+cloudinary.config(
+    cloud_name=os.environ.get('CLOUD_NAME'),
+    api_key=os.environ.get('API_KEY'),
+    api_secret=os.environ.get('API_SECRET')
+)
 
 
 # Function and route to Home Page
@@ -137,6 +147,8 @@ def logout():
 @app.route("/add_book", methods=["GET", "POST"])
 def add_book():
     if request.method == "POST":
+        photo = request.files['photo_url']
+        photo_upload = cloudinary.uploader.upload(photo)
         is_recommend = "on" if request.form.get("is_recommend") else "off"
         book = {
             "book_title": request.form.get("book_title"),
@@ -145,7 +157,8 @@ def add_book():
             "fun_meter": request.form.get("fun_meter"),
             "is_recommend": is_recommend,
             "date_posted": request.form.get("date_posted"),
-            "username": session["user"]
+            "username": session["user"],
+            "photo_url": photo_upload["secure_url"]
         }
         mongo.db.books.insert_one(book)
         flash("Thank you for your contribution!")

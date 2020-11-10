@@ -13,7 +13,10 @@
                     <label for="query">Search Books/Author</label>                    
                 </div>
                 <div class="col s12 m4">
-                    <a href="{{ url_for('get_books') }}" class="red btn text-shadow">Reset</a>
+                    <a href="{{ url_for('get_books') }}" class="red btn text-shadow">
+                        <i class="fas fa-undo left"></i> 
+                        Reset
+                        </a>
                     <button type="submit" class="light-blue darken-1 btn text-shadow">
                         <i class="fas fa-search left"></i> Search
                     </button>
@@ -27,7 +30,11 @@
         {% for book in books %}
         <li>
             <div class="collapsible-header white-text orange accent-3 text-shadow">
+
                 <div class="col s3">
+                    <img class="card-images" src="{{ book.photo_url }}" alt="book-picture">
+                </div>
+                <div class="col s3">                   
 
                     <!-- adding remove and edit book functionality -->
                     <i class="fas fa-caret-down"></i>
@@ -54,7 +61,7 @@
                 </div>
                 
                 <!-- adding the book title and is recommended -->
-                <div class="col s9">
+                <div class="col s6">
                     <strong>{{ book.book_title }}</strong>
                     {% if book.is_recommend == "on" %}
                         <i class="fas fa-thumbs-up light-blue-text text-lighten-2 tooltipped"
