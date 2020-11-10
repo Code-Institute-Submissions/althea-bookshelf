@@ -1,43 +1,45 @@
 {% extends "base.html" %}
 {% block content %}
     
-    <h4 class="center-align register">These are the books best recommended by our little angels. </h4>
+    <h3 class="center-align slogan">These are the books recommended <br> by our little angels.<br> </h3>
 
-    <!-- creating a search for all books -->
+    <!-- creating a search for all books -->   
     <div class="row card-panel grey lighten-5">
         <form action="{{ url_for('search') }}" method="post" class="col s12">
-            <div class="row valign-wrapper center-align">
-                <div class="input-field col s12 m8">
+            <div class="row valign-wrapper left-align">
+                <div class="input-field col s12 m12">
                     <i class="fas fa-search prefix light-blue-text text-darken-4"></i>
                     <input type="text" name="query" id="query" minlength="3" class="validate" required>
                     <label for="query">Search Books/Author</label>                    
-                </div>
-                <div class="col s12 m4">
+               
                     <a href="{{ url_for('get_books') }}" class="red btn text-shadow">
                         <i class="fas fa-undo left"></i> 
                         Reset
                         </a>
                     <button type="submit" class="light-blue darken-1 btn text-shadow">
-                        <i class="fas fa-search left"></i> Search
+                        <i class="fas fa-search left"></i>
+                        Search
                     </button>
                 </div>
             </div>
         </form>
-    </div>
+    </div>    
 
     {% if books|length > 0 %}
     <ul class="collapsible popout">
         {% for book in books %}
         <li>
-            <div class="collapsible-header white-text orange accent-3 text-shadow">
+            <div class="collapsible-header green lighten-1 white-text text-darken-4 text-shadow">
 
+                <!-- adding image of book -->
+                 <i class="fas fa-caret-down"></i>
                 <div class="col s3">
                     <img class="card-images" src="{{ book.photo_url }}" alt="book-picture">
                 </div>
                 <div class="col s3">                   
 
                     <!-- adding remove and edit book functionality -->
-                    <i class="fas fa-caret-down"></i>
+                   
                     {% if session.user|lower == book.username|lower %}
                         <a href="#remove{{ loop.index }}" class="btn-small green accent-4 waves-effect waves-light                  modal-trigger">
                             Remove Book

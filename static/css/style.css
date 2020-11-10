@@ -1,4 +1,27 @@
 
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+/* navbar */
+.brand-logo {
+    font-size: 3em;
+}
+
+.logo-nav {
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+.nav-links {
+    font-size: 1.25em;
+}
 
 #book_title,
 #book_author, #angel_name {
@@ -17,6 +40,11 @@
     color: #03a9f4 ;
 }
 
+.slogan {
+    color: #7c4dff ;
+    margin-bottom: 1.2em;
+}
+
 .btn-small {
     margin: 5px;
 }
@@ -25,3 +53,23 @@
     margin: 5px;
     line-height: 42px;
 }
+
+img {
+    height: 8em;
+}
+
+/* Footer */
+.page-footer{
+    margin-top: 5em;    
+}
+
+.footer-about {
+    font-size: 1.25em;
+}
+
+.fab {
+    color: white;
+    font-size: 2em;
+    padding: 0.5em;
+}
+

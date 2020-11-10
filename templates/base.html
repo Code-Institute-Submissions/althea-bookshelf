@@ -15,37 +15,28 @@
 
 </head>
 <body>
-
-    <header>
-    <div>
-        <div class="navbar-bg">
-            <div class="no-bottom-mg hide-on-med-and-down">
-                <h1 class="title white-text no-bottom-mg no-top-mg">
-                    <a href="{{ url_for('get_books') }}">
-                    Althea's BookShelf
-                    </a>
-                </h1>
-            </div>    
-        </div>
+    <header>            
 
         <!-- main navbar -->
-        <nav class="nav-extended text-shadow orange accent-3">
-            <div class="nav-wrapper">
-            <!-- <a href="{{ url_for('get_books') }}" class="brand-logo">Althea's BookShelf</a> -->
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="{{ url_for('get_books') }}">Home</a></li>
-                {% if session.user %}
-                    <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                    <li><a href="{{ url_for('add_book') }}">Add Book</a></li>                    
-                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-                {% else %}
-                    <li><a href="{{ url_for('login') }}">Log In</a></li>
-                    <li><a href="{{ url_for('register') }}">Register</a></li>
-                {% endif %}
-            </ul>
+        <nav class="nav-extended text-shadow blue accent-3 logo-nav">
+            <div class="container">  
+                <div class="nav-wrapper logo-nav">
+                    <a href="{{ url_for('get_books') }}" class="brand-logo right">Althea's BookShelf</a> 
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger left"><i class="fas fa-bars"></i></a>
+                    <ul class="left hide-on-med-and-down">
+                        <li><a href="{{ url_for('get_books') }}" class="nav-links">Home</a></li>
+                        {% if session.user %}
+                            <li><a href="{{ url_for('profile', username=session['user']) }}" class="nav-links">Profile</a></li>
+                            <li><a href="{{ url_for('add_book') }}" class="nav-links">Add Book</a></li>                    
+                            <li><a href="{{ url_for('logout') }}" class="nav-links">Log Out</a></li>
+                        {% else %}
+                            <li><a href="{{ url_for('login') }}" class="nav-links">Log In</a></li>
+                            <li><a href="{{ url_for('register') }}" class="nav-links">Register</a></li>
+                        {% endif %}
+                     </ul>
+                </div>
             </div>
-        </nav>
+        </nav>  
 
         <!-- mobile sidenav -->
         <ul class="sidenav" id="mobile-demo">
@@ -66,7 +57,7 @@
                 <li><a href="{{ url_for('register') }}">Register</a></li>
             {% endif %}
         </ul>
-    </div>
+    
     </header>
     
     <section>
@@ -75,7 +66,7 @@
             {% if messages %}
                 {% for message in messages %}
                     <div class="row flashes">
-                        <h4 class="light-blue lighten-4 center-align">{{ message }}</h4>
+                        <h3 class="center-align">{{ message }}</h3>
                     </div>
                 {% endfor %}
             {% endif %}
@@ -87,27 +78,31 @@
         {% endblock %}
     </main>
   
-    <footer class="page-footer">
+    <footer class="page-footer blue accent-3">
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
-                    <h5 class="white-text">Althea's BookShelf</h5>
-                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                    <h4 class="center-align">Althea's BookShelf</h4>
+                    <p class="footer-about">
+                        This online bookshelf is a place for parents to share and review  
+                        books that their little ones love. From the funniest to the<br>
+                        scariest, book of songs and books of poetry. Every one is<br>
+                        encouraged to share and respect each others point of view.<br>                                        
+                    </p>
                 </div>
                 <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Links</h5>
-                    <ul>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                    <h4 class="center-align">Follow Us</h4>
+                    <ul class="center-align">
+                        <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                        <li><a  href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                        
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="footer-copyright">
+        <div class="footer-copyright green lighten-1">
             <div class="container center-align">
-                © 2020 Copyright                
+                <h4>© 2020 Copyright</h4>
             </div>
         </div>
     </footer>
