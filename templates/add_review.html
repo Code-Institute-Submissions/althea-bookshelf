@@ -6,20 +6,21 @@
     <div class="container">
         <form method="POST" action="{{ url_for('add_review', book_id=book._id) }}">
             <div class="row">
-                <div>
-                    <label for="user_review">Please add your review.</label>
-                    <textarea class="form-control" id="user_review" name="user_review" minlength="5" maxlength="300" rows="5" required></textarea>
-                                   
-                </div>                                                                
+                <div class="col s12 m12">
+                    <label for="user_review"><h5>Please add your review.</h5> </label>
+                    <textarea id="user_review" name="user_review" minlength="8" maxlength="300" rows="8" cols="30" required>
+                    </textarea>                                   
+                                                                             
                 
-                <a href="{{ url_for('get_books') }}" class="btn-large red text-shadow">
-                    Cancel Review<i class="fas fa-times-cicle right"></i>
+                <a href="{{ url_for('get_books') }}" class="modal-trigger btn-large waves-light waves-effect accent-4 green
+                    ">
+                    Cancel Comment<i class="fas fa-times-circle right"></i>
                 </a>
 
-                <button type="submit" class="btn-large orange accent-3 text-shadow">
-                    Add Review <i class="fas fa-plus-square right"></i>
+                <button type="submit" class="modal-close btn-large waves-light waves-effect blue">
+                    Insert Comment &nbsp <i class="fas fa-plus-square right"></i> 
                 </button>
-
+                </div>
             </div>
         </form>
     </div>

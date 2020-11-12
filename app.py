@@ -170,6 +170,8 @@ def add_book():
 @app.route("/edit_book/<book_id>", methods=["GET", "POST"])
 def edit_book(book_id):
     if request.method == "POST":
+        photo = request.files['photo_url']
+        photo_upload = cloudinary.uploader.upload(photo)
         is_recommend = "on" if request.form.get("is_recommend") else "off"
         review = {
             "book_title": request.form.get("book_title"),
@@ -178,7 +180,8 @@ def edit_book(book_id):
             "fun_meter": request.form.get("fun_meter"),
             "is_recommend": is_recommend,
             "date_posted": request.form.get("date_posted"),
-            "username": session["user"]
+            "username": session["user"],
+            "photo_url": photo_upload["secure_url"]
         }
         mongo.db.books.update({"_id": ObjectId(book_id)}, review)
         flash("Book review is updated!")

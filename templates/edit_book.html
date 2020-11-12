@@ -9,7 +9,7 @@
             <!-- book title -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-book prefix light-blue-text"></i>
+                    <i class="fas fa-book prefix blue-text text-accent-3"></i>
                     <input id="book_title" name="book_title" minlength="5" maxlength="30" 
                         value="{{ book.book_title }}" type="text" class="validate" required>
                     <label for="book_title">Title of Book</label>
@@ -19,7 +19,7 @@
             <!-- book author -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-user-circle prefix light-blue-text"></i>
+                    <i class="fas fa-user-circle prefix blue-text text-accent-3"></i>
                     <input id="book_author" name="book_author" minlength="2" maxlength="30" 
                         value="{{ book.book_author }}" type="text" class="validate" required>
                     <label for="book_author">Author (if applicable)</label>
@@ -29,7 +29,7 @@
             <!-- book description -->
             <div class="row">  
                 <div class="input-field col s12">
-                    <i class="fas fa-align-left prefix light-blue-text"></i>                                                  
+                    <i class="fas fa-align-left prefix blue-text text-accent-3"></i>                                          
                     <textarea id="book_review" name="book_review" minlength="5"
                         maxlength="200" class="materialize-textarea" required>
                     {{- book.book_review -}}
@@ -41,7 +41,7 @@
             <!-- fun meter -->
              <div class="row">  
                 <div class="input-field col s12">
-                    <i class="fas fa-smile prefix light-blue-text"></i>                                                  
+                    <i class="fas fa-smile prefix blue-text text-accent-3"></i>                                                 
                     <input id="fun_meter" name="fun_meter" minlength="1" type="text" maxlength="1" 
                         value="{{ book.fun_meter }}" pattern="^[0-5]{1,1}$" class="validate" required>
                     <label for="fun_meter">Fun Meter ( rate from 1-lowest to 5-highest)</label>                   
@@ -51,7 +51,7 @@
             <!-- date posted picker -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-calendar-alt prefix light-blue-text"></i>
+                    <i class="fas fa-calendar-alt prefix blue-text text-accent-3"></i>
                     <input id="date_posted" name="date_posted" type="text" 
                         value="{{ book.date_posted }}" class="datepicker validate" required>
                     <label for="date_posted">Date Posted</label>
@@ -62,7 +62,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <div class="switch">
-                        <i class="fas fa-thumbs-up prefix light-blue-text"></i> 
+                        <i class="fas fa-thumbs-up prefix blue-text text-accent-3"></i> 
                         <label for="is_recommend">     
                             {% if book.is_recommend == "on" %}   
                             <input type="checkbox" id="is_recommend" name="is_recommend" checked >                
@@ -76,15 +76,21 @@
                 </div>
             </div>
             
+             <!-- adding image of book -->
+            <p class="register">Please share a photo of your book:</p>            
+            <div class="btn orange white-text text-darken-4 text-shadow col s12 left-btn">                
+                <input type="file" class="file validate" accept="image/*" name="photo_url" id="photo_url" required>
+            </div>
+            
             <!-- add book button -->
             <div class="row">
                 <div class="col s12 center-align">
                     <!-- cancel button -->
-                    <a href="{{ url_for('get_books') }}" class="btn-large red text-shadow">
+                    <a href="{{ url_for('get_books') }}" class="btn-large green text-shadow">
                         Cancel Edit<i class="fas fa-times-circle right"></i>
                     </a>
-                    <button type="submit" class="btn-large orange accent-3 text-shadow">
-                        Edit Book <i class="fas fa-edit right"></i>
+                    <button type="submit" class="btn-large light-blue darken-1 text-shadow">
+                        Edit Book &nbsp <i class="fas fa-edit right"></i>
                     </button>
                 </div>
             </div>
