@@ -75,3 +75,29 @@ On this project I have used easily identifiable Font Awesome icons.
 I designed my site moc-ups using [balsamiq](https://balsamiq.com/) wireframes.
 The idea was to create a basic layout structure of the site and identify how it will display on different screen sizes.
 
+# Technologies used
+
+## Languages
+
+* [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+* [CSS](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics)
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [Python](https://www.python.org/)
+
+## Libraries and Technologies
+* [jQuery](https://jquery.com/)
+* [Materialize](https://materializecss.com/)
+* [MongoDB Atlas](https://account.mongodb.com/account/login)
+* [PyMongo](https://pypi.org/project/pymongo/)
+* [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+* [Jinja](https://jinja.palletsprojects.com/en/2.11.x/)
+* [Font Awesome](https://fontawesome.com/)
+* [Google Fonts](https://fonts.google.com/)
+* [Git](https://git-scm.com/)
+* [Github](https://github.com/)
+* [Heroku](https://dashboard.heroku.com/)
+* [Trello](https://trello.com/b/a3dsnJ58/ms2-project)
+* [Cloudinary](https://cloudinary.com)
+* [Favicon](https://favicon.io/)
+
+
