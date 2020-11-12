@@ -1,45 +1,77 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+# Althea's Bookshelf
 
-Welcome gideongannaban,
+    The purpose of this project is to create a website for fellow parents or guardians to share
+the most recommended books by their young ones. These could be the books that they always read to
+their toddlers before bedtime or during story times. This will be an interesting place for parents
+to share their recommendations as well as their experiences when reading for their young ones.  
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+    My inspiration for this project is our 2 years old daughter who continuously amazed us everyday.
+One of her favorite times of the day is when we read her story books. She has couple of favorite books
+that she always chose especially before bedtime. She loves these books to the point that she has memorized
+the lines from the characters.  
 
-## Gitpod Reminders
+    For this project, I will be using python, flask and MongoDB as my primary programming language and
+html, CSS, JavaScript and materialize for the front end.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+# UX
 
-`python3 -m http.server`
+## Project Goals:
 
-A blue button should appear to click: *Make Public*,
+#### My goals for this project are:
 
-Another blue button should appear to click: *Open Browser*.
+*  Create an interactive website where parents/guardians and/or childminders can use it as a source of information
+    on what books they should get for their young ones
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+* The website should give the site visitor ability to suggest a book they think their toddler loves,
+    add a comment or feedback to other books posted by other users at the same time it should give
+    them the ability to delete or remove their account if they wish to.
 
-A blue button should appear to click: *Make Public*,
+#### Site Owner's Goals:
 
-Another blue button should appear to click: *Open Browser*.
+* To provide a platform for the user to share books best fit for the young ones
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+* Create an interactive community working towards the goal of sharing the best books for the little ones.
 
-## Updates Since The Instructional Video
+## User Stories:
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+#### Target Audience:
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+Our target audiences are parents/guardians and childminders who are searching for a quality books to read to their kids.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+* As a parent/guardian and childminder, I should be able identify the purpose of the website 
+* As a parent/guardian and childminder, I should be able get an idea of what books I should get my little ones
+    based on the recommendations from fellow parents.
+* As a parent/guardian and childminder, I should be able to contribute with the community by sharing
+    the book/s that my kids love.
+* As a parent/guardian and childminder,I should be able to view the list of books I have recommended to the community.
+* As a parent/guardian and childminder,I should have the ability to edit or remove the books that I shared.
+* As a parent/guardian and childminder, I should be able to add my feedback or comments to the recommended books
+* As a parent/guardian and childminder, I should be able to view the site using my mobile phone or tablet
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+#### As an admin User or site owner:
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+* I should be able to moderate properly the page by filtering comments/feedback that are harmful to the target audience.
+* I should be able to remove/delete an account or books shared if this are not appropriate to the site's purpose.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+## Design:
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+The aim of the site design is to ensure the focus is on the book reviews.
+Icons used on the site are easy to understand and read and therefore text use is avoided where possible.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+#### Fonts
 
---------
+I chose easy to read and light fonts for this app. I am keeping it simple and will only use one type of font:
 
-Happy coding!
+#### Color Fonts
+
+I opted for this color pallete since as per research this works better for toddlers.
+
+#### Icons
+
+On this project I have used easily identifiable Font Awesome icons.
+
+## Wireframes
+
+I designed my site moc-ups using [balsamiq](https://balsamiq.com/) wireframes.
+The idea was to create a basic layout structure of the site and identify how it will display on different screen sizes.
+
