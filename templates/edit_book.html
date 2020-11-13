@@ -4,7 +4,8 @@
     <h3 class="center-align register">Edit Book</h3>
 
     <div class="row card-panel grey lighten-5">
-        <form class="col s12" method="POST" action="{{ url_for('edit_book', book_id=book._id) }}" enctype="multipart/form-data">  
+        <form class="col s12" method="POST" action="{{ url_for('edit_book', book_id=book._id) }}" 
+            enctype="multipart/form-data">  
 
             <!-- book title -->
             <div class="row">
@@ -76,16 +77,18 @@
                 </div>
             </div>
             
-             <!-- adding image of book -->
+            <!-- adding image of book -->
             <p class="register">Please share a photo of your book:</p>            
             <div class="btn orange white-text text-darken-4 text-shadow col s12 left-btn">                
-                <input type="file" class="file validate" accept="image/*" name="photo_url" id="photo_url" required>
+                <input type="file" class="file validate" accept="image/*" name="photo_url" 
+                id="photo_url" required>
             </div>
             
             <!-- add book button -->
             <div class="row">
                 <div class="col s12 center-align">
-                    <!-- cancel button -->
+
+                    <!-- cancel and edit button -->
                     <a href="{{ url_for('get_books') }}" class="btn-large green text-shadow">
                         Cancel Edit<i class="fas fa-times-circle right"></i>
                     </a>

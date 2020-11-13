@@ -67,7 +67,7 @@ def register():
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
-        flash("Hi {} ".format(request.form.get("angel_name|capitalize")))
+        flash("Hi {} ".format(request.form.get("username")))
         flash("Welcome to the Fun World of Children's Book")
         return redirect(url_for("profile", username=session["user"]))
     return render_template("register.html")
@@ -223,7 +223,6 @@ def remove_review(review_id):
     mongo.db.review.remove({"_id": ObjectId(review_id)})
     flash("Book Successfully Removed")
     return redirect(url_for("get_books"))
-
 
 
 if __name__ == "__main__":

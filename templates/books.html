@@ -22,6 +22,7 @@
         </form>
     </div>    
 
+    <!-- collapsible books display -->
     {% if books|length > 0 %}
     <ul class="collapsible">
         {% for book in books %}
@@ -35,16 +36,18 @@
                 <div class="col s8">
                     <img class="card-images" src="{{ book.photo_url }}" alt="book-picture">
                 </div>
-            
+
                 <div class="col s4">                   
 
                     <!-- adding remove and update book functionality -->                   
                     {% if session.user|lower == book.username|lower %}                        
-                        <a href="#remove{{ loop.index }}" class="btn-small green waves-effect waves-light                  modal-trigger">
+                        <a href="#remove{{ loop.index }}" 
+                            class="btn-small green waves-effect waves-light modal-trigger">
                             Delete 
                         </a>
                         
-                        <a href="{{ url_for('edit_book', book_id=book._id) }}" class="btn-small light-blue accent-4">
+                        <a href="{{ url_for('edit_book', book_id=book._id) }}" 
+                            class="btn-small light-blue accent-4">
                             Update 
                         </a>
 
@@ -105,6 +108,7 @@
                 </p>          
                 
                 <hr>
+
                 <!-- adding a review of the books --> 
                 <div class="row ">
                 <h5 class="light-blue-text text-darken-4"><u> Comments/Feedback: </u></h5>             
@@ -122,7 +126,8 @@
                             </div>                               
                             
                             {% if reviews.username==session.user %}
-                                <a href="#delete{{ loop.index }}" class="btn-small green accent-4 waves-effect waves-light                  modal-trigger">
+                                <a href="#delete{{ loop.index }}" 
+                                    class="btn-small green accent-4 waves-effect waves-light modal-trigger">
                                     Delete Review
                                 </a>
 
@@ -132,16 +137,20 @@
                                         <h4>Are you sure you want to delete your review?</h4>                                
                                     </div>
                                     <div class="modal-footer">
-                                        <a href="{{ url_for('remove_review', review_id=reviews._id) }}" class="btn-small green accent-4 waves-effect waves-light">Delete</a>
+                                        <a href="{{ url_for('remove_review', review_id=reviews._id) }}" 
+                                            class="btn-small green accent-4 waves-effect waves-light">
+                                            Delete
+                                        </a>
                                         <a href="#!" class="modal-close btn waves-light waves-effect blue">Cancel</a>
                                     </div>
                                 </div>
                                 {% endif %}
-                                {% endif %}                             
+                            {% endif %}                             
                         {% endfor %}   
                         
                             <!-- add a review button -->
-                            <a href="{{ url_for('add_review', book_id=book._id) }}" class="modal-close btn waves-light waves-effect btn light-blue" type="submit">
+                            <a href="{{ url_for('add_review', book_id=book._id) }}" 
+                                class="modal-close btn waves-light waves-effect btn light-blue" type="submit">
                                 Add a Review
                             </a>                        
                     {% endif %}

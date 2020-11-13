@@ -1,16 +1,16 @@
 # Althea's Bookshelf
 
-    The purpose of this project is to create a website for fellow parents or guardians to share
+The purpose of this project is to create a website for fellow parents or guardians to share 
 the most recommended books by their young ones. These could be the books that they always read to
 their toddlers before bedtime or during story times. This will be an interesting place for parents
 to share their recommendations as well as their experiences when reading for their young ones.  
 
-    My inspiration for this project is our 2 years old daughter who continuously amazed us everyday.
+My inspiration for this project is our 2 years old daughter who continuously amazed us everyday.
 One of her favorite times of the day is when we read her story books. She has couple of favorite books
 that she always chose especially before bedtime. She loves these books to the point that she has memorized
 the lines from the characters.  
 
-    For this project, I will be using python, flask and MongoDB as my primary programming language and
+For this project, I will be using python, flask and MongoDB as my primary programming language and
 html, CSS, JavaScript and materialize for the front end.
 
 # UX
@@ -100,4 +100,16 @@ The idea was to create a basic layout structure of the site and identify how it 
 * [Cloudinary](https://cloudinary.com)
 * [Favicon](https://favicon.io/)
 
+# Features
 
+## Existing Features
+
+
+## Features Left to Implement
+
+# Testing
+
+
+# Deployment
+
+# Credits
