@@ -184,6 +184,7 @@ def edit_book(book_id):
         }
         mongo.db.books.update({"_id": ObjectId(book_id)}, review)
         flash("Book review is updated!")
+        return redirect(url_for("get_books"))
 
     book = mongo.db.books.find_one({"_id": ObjectId(book_id)})
     return render_template("edit_book.html", book=book)
