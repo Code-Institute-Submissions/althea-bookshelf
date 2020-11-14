@@ -54,7 +54,7 @@ def register():
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            flash("Username already exists")
+            flash("Username already exists", "error-flash")
             return redirect(url_for("register"))
 
         register = {
@@ -67,9 +67,9 @@ def register():
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
-        flash("Hi {} ".format(request.form.get("username")))
         flash("Welcome to the Fun World of Children's Book")
         return redirect(url_for("profile", username=session["user"]))
+
     return render_template("register.html")
 
 
@@ -216,6 +216,21 @@ def add_review(book_id):
         return redirect(url_for("get_books"))
 
     return render_template("add_review.html", book=book)
+
+
+# Function and route to update a book review
+@app.route("/update_review/<review_id>", methods=["GET", "POST"])
+def update_review(review_id):
+    review = mongo.db.review.find_one({"_id": ObjectId(review_id)})
+    if request.method == "POST":
+        mongo.db.review.update({"_id": ObjectId(review_id)}, {
+            "title": review["title"],
+            "user_review": request.form.get("user_review"),
+            "username": session["user"]
+        })
+        flash("Review Updated")
+        return redirect(url_for("get_books"))
+    return render_template("edit_review.html", review=review)
 
 
 # Function and route to delete a book review

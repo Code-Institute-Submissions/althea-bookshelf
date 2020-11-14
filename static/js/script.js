@@ -10,5 +10,9 @@ $(document).ready(function(){
             done: "Select"
         }
     });
-    $('.modal').modal();
+    $('.modal').modal();     
   });
+
+setTimeout(function () {
+    $(".flashes").fadeOut('slow');
+  }, 5000);

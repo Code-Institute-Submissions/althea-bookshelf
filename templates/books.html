@@ -116,11 +116,11 @@
                         {% for reviews in review %}     
                             {% if reviews.title==book.book_title %}
                                            
-                            <div>
-                                <p class="review-by">Reviewed by:<span class="book-review"> 
+                            <div class="review-by"> 
+                                <p>Reviewed by:<span class="book-review"> 
                                     {{ reviews.username }} </span>
                                 </p>
-                                <p class="review-by">Book Review:<span class="book-review">
+                                <p>Book Review:<span class="book-review">
                                     {{ reviews.user_review }} </span>
                                 </p>
                             </div>                               
@@ -129,6 +129,10 @@
                                 <a href="#delete{{ loop.index }}" 
                                     class="btn-small green accent-4 waves-effect waves-light modal-trigger">
                                     Delete Review
+                                </a>
+                                <a href="{{ url_for('update_review', review_id=reviews._id) }}" 
+                                    class="btn-small waves-light waves-effect btn light-blue modal-trigger">
+                                    Update Review
                                 </a>
 
                                 <!-- modal body for removing a review -->

@@ -39,7 +39,7 @@
                         <i class="fas fa-child blue-text text-accent-3 prefix"></i>
                         <input placeholder="Toddler's name" id="angel_name" name="angel_name" 
                             type="text" minlength="2" maxlength="20" class="validate" 
-                            pattern="^[a-zA-Z0-9]{5,100}$" required>
+                            pattern="^[a-zA-Z]{2,100}$" required>
                         <label for="angel_name">
                             Little Angel's Name
                         </label>
@@ -52,7 +52,7 @@
                         <i class="fas fa-hashtag blue-text text-accent-3 prefix"></i>
                         <input placeholder="up to 12 years old" id="angel_age" name="angel_age" 
                             type="text" minlength="0" maxlength="2" class="validate" 
-                            pattern="^[0-12]{0,12}$" required>
+                            pattern="^[0-9]{0,9}$" required>
                         <label for="angel_age">
                             Little Angel's Age
                         </label>
@@ -61,7 +61,7 @@
 
                 <!-- register button -->
                 <div class="row">
-                    <button type="submit" class="col s12 btn-large orange accent-3 text-shadow">
+                    <button type="submit" class="col s12 btn-large orange accent-3 text-shadow" name="action">
                         Register <i class="fas fa-sign-in-alt"></i>
                     </button>
                 </div>

@@ -1,16 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <!-- Adding a feedback section -->  
+    <!-- Updating a feedback section -->  
     <div class="container">
-        <form method="POST" action="{{ url_for('add_review', book_id=book._id) }}">
+        <form method="POST" action="{{ url_for('update_review', review_id=review._id) }}">
             <div class="form-group">
                 <div class="col s12 m12">
                     <label for="user_review">
-                        <h5>Please add your review.</h5> 
+                        <h5>Edit Comment</h5> 
                     </label>
                     <textarea placeholder="Input text here... " id="user_review" name="user_review" 
                         minlength="8" maxlength="500" rows="3" required>
+                        {{ review.reiews }}
                     </textarea>           
                 
                     <a href="{{ url_for('get_books') }}" class="modal-trigger btn-large waves-light 
@@ -19,7 +20,7 @@
                     </a>
 
                     <button type="submit" class="modal-close btn-large waves-light waves-effect blue">
-                        Insert Comment &nbsp <i class="fas fa-plus-square right"></i> 
+                        Update Comment <i class="fas fa-plus-square right"></i> 
                     </button>
                 </div>
             </div>
