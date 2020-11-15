@@ -13,6 +13,8 @@ $(document).ready(function(){
     $('.modal').modal();     
   });
 
+// to automatically remove flash message
+
 setTimeout(function () {
     $(".flashes").fadeOut('slow');
   }, 5000);

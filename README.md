@@ -83,7 +83,7 @@ On this project I have used easily identifiable Font Awesome icons.
 I designed my site moc-ups using [balsamiq](https://balsamiq.com/) wireframes.
 The idea was to create a basic layout structure of the site and identify how it will display on different screen sizes.
 
-For more details please click [wireframe]
+For more details please click [wireframe](https://github.com/gideongannaban/althea-bookshelf/blob/master/wireframes.md)
 
 # Technologies used
 
@@ -183,36 +183,52 @@ The project was deployed in Heroku by following below procedure:
 3. Commit and push both requirements.txt and Procfile
 4. Login to Heroku, click on "New" then on the dropdown choose "Create App".
 
+
 ![Heroku New](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Heroku.JPG)
+
 
 5. Give the app a unique name and choose the region closest to your location then click "Create App"
 
+
 ![Heroku Name](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Heroku2.png)
+
 
 6. From the deploy tab, select the Deployment method 'Github'.
 
+
 ![connect to Github](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Heroku3.png)
+
 
 7. After clicking the "Connect to Github", make sure Github profile name is displayed then type in your repository name then click "Search". Once repo is found click on "Connect".
 
+
 ![connect to repo](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Heroku4.JPG)
+
 
 8. Go to the Settings Tab, scroll to the "Config Vars" then click on "Reveal Config Vars".
 
+
 ![reveal Config](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Heroku5.JPG)
+
 
 9. Enter variables(key and value) from your env.py file. Example of which are below:
 
+
 ![key and value](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Heroku6.JPG)
+
 
 10. Once these are added in Heroku make sure you commit and push requirements.txt and Procfile from the terminal.
 11. Go to the Deploy Tab in Heroku and under the Automatic Deployment section click on "Enable Automatic Deploys". 
 
+
 ![Automatic deploy](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Heroku7.JPG)
+
 
 12. Under the Manual Deploy, click on the "Deploy Branch".
 
+
 ![Deploy branch](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Heroku8.JPG)
+
 
 13. Heroku will now build the app using the required package. 
 14. Once done, you will receive the message "Your app was successfully deployed" and click "View" to launch the app. 
@@ -242,9 +258,9 @@ Click [Here](https://docs.github.com/en/free-pro-team@latest/github/creating-clo
 * [Materialize 1.0.0:](https://materializecss.com/)Materialize Library used throughout the project, components used include the grid System, forms, buttons, modals, navbar, dropdown, side nav, tabs, carousel, cards, toasts, and tooltips.
 
 * These websites contain great source of inspiration and solution whenever I encounter an error or just looking for a better way of presenting my idea:
-> [W3schools](https://www.w3schools.com/)
-> [Youtube](https://www.youtube.com/)
-> [stackoverflow](https://stackoverflow.com/)
+- [W3schools](https://www.w3schools.com/)
+- [Youtube](https://www.youtube.com/)
+- [stackoverflow](https://stackoverflow.com/)
 
 * Favicon logo was create from [canva](https://www.canva.com/)
 * All text are written by myself

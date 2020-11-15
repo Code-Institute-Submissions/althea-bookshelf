@@ -30,6 +30,7 @@ cloudinary.config(
 
 messages = []
 
+
 # Function and route to Home Page
 @app.route("/")
 @app.route("/get_books")
@@ -85,9 +86,10 @@ def login():
 
         if existing_user:
             # ensure hashed password matches the user input
-            if check_password_hash(existing_user["password"], request.form.get("password")):
+            if check_password_hash(
+                    existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                flash("Welcome back!". format(request.form.get("username")))
+                flash("Welcome back!")
                 return redirect(url_for("profile", username=session["user"]))
 
             else:
