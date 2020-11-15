@@ -1,3 +1,6 @@
+
+![Responsive](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Responsive.JPG)
+
 # Althea's Bookshelf
 
 The purpose of this project is to create a website for fellow parents or guardians to share 
@@ -12,6 +15,8 @@ the lines from the characters.
 
 For this project, I will be using python, flask and MongoDB as my primary programming language and
 html, CSS, JavaScript and materialize for the front end.
+
+To view the live version of the website please click [Alteha's Bookshelf](https://althea-bookshelf.herokuapp.com/)
 
 # UX
 
@@ -61,11 +66,13 @@ Icons used on the site are easy to understand and read and therefore text use is
 
 #### Fonts
 
-I chose easy to read and light fonts for this app. I am keeping it simple and will only use one type of font:
+I chose easy to read and light fonts for this app. I am keeping it simple and will only use one type of font, Abreeze. 
 
 #### Color Fonts
 
 I opted for this color pallete since as per research this works better for toddlers.
+
+![Color Pallete](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/color%20palette.JPG)
 
 #### Icons
 
@@ -75,6 +82,8 @@ On this project I have used easily identifiable Font Awesome icons.
 
 I designed my site moc-ups using [balsamiq](https://balsamiq.com/) wireframes.
 The idea was to create a basic layout structure of the site and identify how it will display on different screen sizes.
+
+For more details please click [wireframe]
 
 # Technologies used
 
@@ -113,55 +122,54 @@ There are 2 user views currently for the website, unregistered Users and Registe
 
 ### Unregistered Users
 * Home 
-> As an unregistered users, they can search for a specific books from search area. 
-> They can see the list of books added on the database
+- As an unregistered users, they can search for a specific books from search area. 
+- They can see the list of books added on the database
 
 * The logo 
-> Allows the users to go back to the home page
+- Allows the users to go back to the home page
 
 * Register 
-> Allows users to create a new profile. Once created, they will be entitled to additional
-functionality.
-> They would need to create a username, password, their toddler's name and age.
-
+- Allows users to create a new profile. Once created, they will be entitled to additional functionality.
+- They would need to create a username, password, their toddler's name and age.
+- Upon successful registration they will be redirected to the Profile Page
 
 * Log in
-> Allows users to login to their profile
+- Allow users to login to their profile for complete functionality
 
 ### Registered Users
 * Home 
-> The users can search for a specific books from the search area.
-> The users can see the list of added on the database
-> The users can add a review of the books already added 
-> The users can update and/or delete the reviews they've added
-> If the users have already added a book, they would have the ability to delete and/or update it
+- The users can search for a specific books from the search area.
+- The users can see the list of added on the database
+- The users can add a review of the books already added 
+- The users can update and/or delete the reviews they've added
+- If the users have already added a book, they would have the ability to delete and/or update it
 
 * The logo 
-> Allows the users to go back to the home page
+- Allows the users to go back to the home page
 
 * profile
-> Allows users to view the list of books they've added and their profile details
-> Users will have the ability to delete added books from their profile
-> Users will have the ability to delete their account when they wish to.
+- Allows users to view the list of books they've added and their profile details
+- Users will have the ability to delete added books from their profile
+- Users will have the ability to delete their account when they wish to.
 
 * Add Book
-> Allows the users to add book by filling out the add book form.
+- Allows the users to add book by filling out the add book form.
 
 ## Features Left to Implement
 * Contact form
-> This will allow the users to contact the site owner for any feedback and recommendations
+- This will allow the users to contact the site owner for any feedback and recommendations
 
 * Store Link
-> Add a link where the users can suggest how to purchase the books they've added 
+- Add a link where the users can suggest how to purchase the books they've added 
 
 * Admin User
-> This will allow the site owner to delete in-appropriate books added or reviews
+- This will allow the site owner to delete in-appropriate books added or reviews
 
 * Category
-> Add a category based on age group and part of the day the books are best to be read
+- Add a category based on age group and part of the day the books are best to be read
 
 # Testing
-For testing procedure please click [Testing.md]
+For testing procedure please click [Testing.md](https://github.com/gideongannaban/althea-bookshelf/blob/master/testing.md)
 
 # Deployment
 
@@ -174,23 +182,38 @@ The project was deployed in Heroku by following below procedure:
 > echo web:python app.py > Procfile
 3. Commit and push both requirements.txt and Procfile
 4. Login to Heroku, click on "New" then on the dropdown choose "Create App".
-> Insert pix of Heroku
-5. Give the app a unique name and choose the region applicable to your location then click "Create App"
-> Insert pix of Heroku2
+
+![Heroku New](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Heroku.JPG)
+
+5. Give the app a unique name and choose the region closest to your location then click "Create App"
+
+![Heroku Name](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Heroku2.png)
+
 6. From the deploy tab, select the Deployment method 'Github'.
-> Insert pix of Heroku3
-7. After clicking the "Connect to Github", make sure Github profile name is displayed then type in your repository
-name then click "Search". Once repo is found click on "Connect".
-> Insert pix of Heroku4
+
+![connect to Github](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Heroku3.png)
+
+7. After clicking the "Connect to Github", make sure Github profile name is displayed then type in your repository name then click "Search". Once repo is found click on "Connect".
+
+![connect to repo](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Heroku4.JPG)
+
 8. Go to the Settings Tab, scroll to the "Config Vars" then click on "Reveal Config Vars".
-> Insert pix of Heroku5
+
+![reveal Config](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Heroku5.JPG)
+
 9. Enter variables(key and value) from your env.py file. Example of which are below:
-> Insert pix of Heroku6
+
+![key and value](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Heroku6.JPG)
+
 10. Once these are added in Heroku make sure you commit and push requirements.txt and Procfile from the terminal.
 11. Go to the Deploy Tab in Heroku and under the Automatic Deployment section click on "Enable Automatic Deploys". 
-> Insert pix of Heroku7
+
+![Automatic deploy](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Heroku7.JPG)
+
 12. Under the Manual Deploy, click on the "Deploy Branch".
-> Insert pix of Heroku8
+
+![Deploy branch](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Heroku8.JPG)
+
 13. Heroku will now build the app using the required package. 
 14. Once done, you will receive the message "Your app was successfully deployed" and click "View" to launch the app. 
 
@@ -200,11 +223,16 @@ name then click "Search". Once repo is found click on "Connect".
 3. Open Git Bash.
 * Make sure Git Bash App is downloaded in your laptop/desktop
 * Paste the Cloned link using the "Git Bash here" option.
-> Insert pix of gitbash
+
+![gitbash](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/gitbash.png)
+
 4. Type "git clone" in the Git Bash command page, then paste the URL you copied.
-> Insert pix of git clone
+
+![gitclone](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/gitclone.JPG)
+
 5. Press Enter to create the local clone. 
-> Insert pix of localclone
+
+![local clone](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/localclone.JPG)
 
 Click [Here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository) for additional details and more detailed explanation of the process.
 

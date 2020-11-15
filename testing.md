@@ -31,19 +31,19 @@ Browser testing was done using below browsers to ensure website can be viewed fo
 
 * As a parent/guardian and childminder, I should be able to contribute with the community by sharing
     the book/s that my kids love.
-> Once the user has registered and created their profile, the Add Book tab in navbar will show which then give them the ability to share their recommended book/s.
+> This can be achieved once the user has registered and created their profile. Upon registration they will be directed to their profile page and the Add Book tab in navbar will show which then give them the ability to share their recommended book/s.
 
 * As a parent/guardian and childminder,I should be able to view the list of books I have recommended to the community.
 > Once the user added a book, they view the list of books they've recommended in 2 ways. First, click on Home and go over the books that have been added. They'll see the username of the person who added each book. Second and better way is for the user to click on Profile Tab and they'll see right away the list of books that they've added/ 
 
 * As a parent/guardian and childminder,I should have the ability to edit or remove the books that I shared.
-> The user can only edit or delete books that he/she has added in the website. They can do this either through the Profile page or on the Home Page.
+> The user can only edit or delete books that he/she has added in the website. They can do this either through the Profile page or on the Home Page. Once the user click on Delete, they will get a modal message to confirm their action. 
 
 * As a parent/guardian and childminder, I should be able to add my feedback or comments to the recommended books
 > The user can be able to do this provided they are still logged in on the site. When they click on a book they will see the option to add/edit or delete their own review. They wouldn't be able to do the same to the other's comments. 
 
 * As a parent/guardian and childminder, I should be able to delete my profile if I wish to do so.  
-> The user can do this by going to the Profile Page then click on "DELETE". This will eventually delete their profile, all books added and comments posted. 
+> The user can do this by going to the Profile Page then click on "DELETE". This will eventually delete their profile, all books added and comments posted. Once user clicks on Delete Profile, they will get a modal message to confirm their action.
 
 * As a parent/guardian and childminder, I should be able to view the site using my mobile phone or tablet
 > Website responsiveness has been throroughly tested so the user can be able to view the website on all types of viewing platform.
