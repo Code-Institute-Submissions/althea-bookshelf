@@ -16,7 +16,7 @@ the lines from the characters.
 For this project, I will be using python, flask and MongoDB as my primary programming language and
 html, CSS, JavaScript and materialize for the front end.
 
-To view the live version of the website please click [Alteha's Bookshelf](https://althea-bookshelf.herokuapp.com/)
+To view the live version of the website please click [Althea's Bookshelf](https://althea-bookshelf.herokuapp.com/)
 
 # UX
 
@@ -184,50 +184,50 @@ The project was deployed in Heroku by following below procedure:
 4. Login to Heroku, click on "New" then on the dropdown choose "Create App".
 
 
-![Heroku New](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Heroku.JPG)
+![Heroku New](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Deployment/Heroku%20New%20App.JPG)
 
 
 5. Give the app a unique name and choose the region closest to your location then click "Create App"
 
 
-![Heroku Name](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Heroku2.png)
+![Heroku Name](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Deployment/Heroku%20App%20Name.png)
 
 
 6. From the deploy tab, select the Deployment method 'Github'.
 
 
-![connect to Github](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Heroku3.png)
+![connect to Github](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Deployment/Heroku%20Connect%20Github.png)
 
 
 7. After clicking the "Connect to Github", make sure Github profile name is displayed then type in your repository name then click "Search". Once repo is found click on "Connect".
 
 
-![connect to repo](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Heroku4.JPG)
+![connect to repo](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Deployment/Heroku%20repo.JPG)
 
 
 8. Go to the Settings Tab, scroll to the "Config Vars" then click on "Reveal Config Vars".
 
 
-![reveal Config](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Heroku5.JPG)
+![reveal Config](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Deployment/Heroku%20Config%20Vars.JPG)
 
 
 9. Enter variables(key and value) from your env.py file. Example of which are below:
 
 
-![key and value](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Heroku6.JPG)
+![key and value](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Deployment/Heroku%20key%20and%20value.JPG)
 
 
 10. Once these are added in Heroku make sure you commit and push requirements.txt and Procfile from the terminal.
 11. Go to the Deploy Tab in Heroku and under the Automatic Deployment section click on "Enable Automatic Deploys". 
 
 
-![Automatic deploy](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Heroku7.JPG)
+![Automatic deploy](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Deployment/Heroku%20Auto%20Deploy.JPG)
 
 
 12. Under the Manual Deploy, click on the "Deploy Branch".
 
 
-![Deploy branch](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Heroku8.JPG)
+![Deploy branch](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Deployment/Heroku%20Deploy.JPG)
 
 
 13. Heroku will now build the app using the required package. 

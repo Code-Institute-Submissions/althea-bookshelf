@@ -71,3 +71,12 @@ The user can do this by going to the Profile Page then click on "DELETE". This w
 * As a parent/guardian and childminder, I should be able to view the site using my mobile phone or tablet
 Website responsiveness has been throroughly tested so the user can be able to view the website on all types of viewing platform.
 
+### Additional Testing
+Manual testing was done using Samsung Note 10, Sony Z5 and Iphone 5 by family members and friends. The responsive design was tested using [Responsinator](https://www.responsinator.com/) and [ami.responsivedesign.](http://ami.responsivedesign.is/)websites.
+
+### Google Chrome Dev Lighthouse
+[Lighthouse](https://developers.google.com/web/tools/lighthouse) was done to test the quality of the web pages. 
+> Insert lighthouse screenshot
+
+# Bugs:
+
