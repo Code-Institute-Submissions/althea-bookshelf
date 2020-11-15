@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@1&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}">
     {% block styles %}
     {% endblock %}
     <title>Althea's BookShelf</title>
@@ -25,8 +26,8 @@
         <!-- main navbar -->
         <nav class="nav-extended text-shadow blue accent-3 logo-nav">
             <div class="container">  
-                <div class="nav-wrapper logo-nav">
-                    <a href="{{ url_for('get_books') }}" class="brand-logo right">Althea's BookShelf</a> 
+                <div class="nav-wrapper logo-nav col s12">
+                    <a href="{{ url_for('get_books') }}" class="brand-logo right">Althea's Bookshelf</a> 
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger left"><i class="fas fa-bars"></i></a>
                     <ul class="left hide-on-med-and-down">
                         <li><a href="{{ url_for('get_books') }}" class="nav-links">Home</a></li>

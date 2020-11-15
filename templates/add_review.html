@@ -4,22 +4,21 @@
     <!-- Adding a feedback section -->  
     <div class="container">
         <form method="POST" action="{{ url_for('add_review', book_id=book._id) }}">
-            <div class="form-group">
+            <div class="row">
                 <div class="col s12 m12">
                     <label for="user_review">
                         <h5>Please add your review.</h5> 
                     </label>
                     <textarea placeholder="Input text here... " id="user_review" name="user_review" 
-                        minlength="8" maxlength="500" rows="3" required>
-                    </textarea>           
+                        minlength="8" maxlength="500" rows="3" required></textarea>           
                 
                     <a href="{{ url_for('get_books') }}" class="modal-trigger btn-large waves-light 
                         waves-effect accent-4 green">
-                        Cancel Comment<i class="fas fa-times-circle right"></i>
+                        Back<i class="fas fa-times-circle right"></i>
                     </a>
 
                     <button type="submit" class="modal-close btn-large waves-light waves-effect blue">
-                        Insert Comment &nbsp <i class="fas fa-plus-square right"></i> 
+                        A d d <i class="fas fa-plus-square right"></i> 
                     </button>
                 </div>
             </div>

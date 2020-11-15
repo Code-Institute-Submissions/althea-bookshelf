@@ -11,8 +11,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-book prefix blue-text text-accent-3"></i>
                     <input placeholder="Please add book title" id="book_title" name="book_title" 
-                        minlength="2" maxlength="100" pattern="^[a-zA-Z]{2,100}$" 
-                        type="text" class="validate" required>
+                        minlength="2" maxlength="100" type="text" class="validate" required>
                     <label for="book_title">Title of Book</label>
                 </div>
             </div>
@@ -33,8 +32,7 @@
                     <i class="fas fa-align-left prefix blue-text text-accent-3"></i>                                          
                     <textarea placeholder="max of 500 characters" id="book_review" name="book_review" 
                         minlength="5" maxlength="500" pattern="^[a-zA-Z0-9]{5,500}$" 
-                        class="materialize-textarea validate" required>
-                    </textarea>
+                        class="materialize-textarea validate" required></textarea>
                     <label for="book_review">What makes it a Fun Book</label>                   
                 </div>
             </div>
@@ -59,20 +57,6 @@
                     <label for="date_posted">Date Posted</label>
                 </div>
             </div>            
-
-            <!-- do you recommend toggle -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <div class="switch">
-                        <i class="fas fa-thumbs-up prefix blue-text text-accent-3"></i> 
-                        <label for="is_recommended">                        
-                            <input type="checkbox" id="is_recommended" name="is_recommended" >
-                            <span class="lever"></span>
-                            Do you recommend?
-                        </label>
-                     </div>
-                </div>
-            </div>
 
             <!-- adding image of book -->
             <p class="register">Please share a photo of your book:</p>            

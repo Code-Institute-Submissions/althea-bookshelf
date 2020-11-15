@@ -75,15 +75,7 @@
                     {% endif %}
 
                 </div>
-                
-                <!-- adding the book title and is recommended -->
-                <div class="hide-on-small-only">                    
-                    {% if book.is_recommend == "on" %}
-                        <i class="fas fa-thumbs-up light-blue-text text-lighten-2 tooltipped"
-                            data-position="right" data-tooltip="Recommended"></i>
-                    {% endif %}
-                </div>
-               
+                             
             </div>
 
             <!-- adding other details of the book -->            
@@ -111,7 +103,7 @@
 
                 <!-- adding a review of the books --> 
                 <div class="row ">
-                <h5 class="light-blue-text text-darken-4"><u> Comments/Feedback: </u></h5>             
+                <h5 class="light-blue-text text-darken-4"><u> Comments/Feedback:</u></h5>             
                     {% if session.user %}                        
                         {% for reviews in review %}     
                             {% if reviews.title==book.book_title %}

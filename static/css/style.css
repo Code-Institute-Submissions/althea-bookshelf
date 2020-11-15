@@ -35,6 +35,12 @@ body {
     font-size: 1.25em;
 }
 
+@media only screen and (max-width: 600px){
+html {
+    font-size: 12px;
+}
+}   
+
 /* -- modal messages --*/
 
 .modal {
@@ -120,6 +126,7 @@ body {
 
 img {
     height: 8em;
+    width: 8em;
 }
 
 /*-- footer --*/

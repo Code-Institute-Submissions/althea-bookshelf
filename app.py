@@ -7,6 +7,7 @@ from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
+from datetime import datetime
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
@@ -27,6 +28,7 @@ cloudinary.config(
     api_secret=os.environ.get('API_SECRET')
 )
 
+messages = []
 
 # Function and route to Home Page
 @app.route("/")
@@ -139,6 +141,7 @@ def delete_profile(critics_id):
 def logout():
     # remove user from session cookies
     session.pop("user")
+    flash("You have been logged out.")
     return redirect(url_for("login"))
 
 
@@ -148,13 +151,11 @@ def add_book():
     if request.method == "POST":
         photo = request.files['photo_url']
         photo_upload = cloudinary.uploader.upload(photo)
-        is_recommend = "on" if request.form.get("is_recommend") else "off"
         book = {
             "book_title": request.form.get("book_title"),
             "book_author": request.form.get("book_author"),
             "book_review": request.form.get("book_review"),
             "fun_meter": request.form.get("fun_meter"),
-            "is_recommend": is_recommend,
             "date_posted": request.form.get("date_posted"),
             "username": session["user"],
             "photo_url": photo_upload["secure_url"]
@@ -169,19 +170,16 @@ def add_book():
 @app.route("/edit_book/<book_id>", methods=["GET", "POST"])
 def edit_book(book_id):
     if request.method == "POST":
-        photo = request.files['photo_url']
-        photo_upload = cloudinary.uploader.upload(photo)
-        is_recommend = "on" if request.form.get("is_recommend") else "off"
         review = {
             "book_title": request.form.get("book_title"),
             "book_author": request.form.get("book_author"),
             "book_review": request.form.get("book_review"),
             "fun_meter": request.form.get("fun_meter"),
-            "is_recommend": is_recommend,
             "date_posted": request.form.get("date_posted"),
             "username": session["user"],
-            "photo_url": photo_upload["secure_url"]
+            "photo_url": request.form.get("photo_url"),
         }
+        print(request.form.get("photo_url"))
         mongo.db.books.update({"_id": ObjectId(book_id)}, review)
         flash("Book review is updated!")
         return redirect(url_for("get_books"))

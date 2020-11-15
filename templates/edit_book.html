@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-book prefix blue-text text-accent-3"></i>
-                    <input id="book_title" name="book_title" minlength="5" maxlength="30" 
+                    <input id="book_title" name="book_title" minlength="5" maxlength="100" 
                         value="{{ book.book_title }}" type="text" class="validate" required>
                     <label for="book_title">Title of Book</label>
                 </div>
@@ -22,7 +22,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-user-circle prefix blue-text text-accent-3"></i>
                     <input id="book_author" name="book_author" minlength="2" maxlength="30" 
-                        value="{{ book.book_author }}" type="text" class="validate" required>
+                        value="{{ book.book_author }}" type="text" class="validate">
                     <label for="book_author">Author (if applicable)</label>
                 </div>
             </div>
@@ -32,7 +32,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-align-left prefix blue-text text-accent-3"></i>                                          
                     <textarea id="book_review" name="book_review" minlength="5"
-                        maxlength="200" class="materialize-textarea" required>
+                        maxlength="500" class="materialize-textarea" required>
                     {{- book.book_review -}}
                     </textarea>
                     <label for="book_review">What makes it a Fun Book</label>                   
@@ -58,30 +58,12 @@
                     <label for="date_posted">Date Posted</label>
                 </div>
             </div>            
-
-            <!-- do you recommend toggle -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <div class="switch">
-                        <i class="fas fa-thumbs-up prefix blue-text text-accent-3"></i> 
-                        <label for="is_recommend">     
-                            {% if book.is_recommend == "on" %}   
-                            <input type="checkbox" id="is_recommend" name="is_recommend" checked >                
-                            {% else %}
-                            <input type="checkbox" id="is_recommend" name="is_recommend" >
-                            {% endif %}
-                            <span class="lever"></span>
-                            Do you recommend?
-                        </label>
-                     </div>
-                </div>
-            </div>
-            
+                       
             <!-- adding image of book -->
-            <p class="register">Please share a photo of your book:</p>            
+                      
             <div class="btn orange white-text text-darken-4 text-shadow col s12 left-btn">                
-                <input type="file" class="file validate" accept="image/*" name="photo_url" 
-                id="photo_url" required>
+                <input type="hidden" class="form-input" value="{{ book.photo_url }}" name="photo_url"
+                id="photo_url" placeholder="Photo Url" required> 
             </div>
             
             <!-- add book button -->
