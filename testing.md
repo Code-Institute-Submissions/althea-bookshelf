@@ -1,7 +1,7 @@
 # Testing
 
 ## Manual Function Testing
-Manual testing was carried out in different browsers and screen sizes to ensure site is responsive to all viewing platforms. The primary tool used for this was [Google Developer Tool](https://developers.google.com/web/tools/chrome-devtools) and the tests were done using the following screen sizes:
+Manual testing was carried out in different browsers and screen sizes to ensure site is not just responsive but also the apprearance and functionality is consisnte to all viewing platforms. The primary tool used for this was [Google Developer Tool](https://developers.google.com/web/tools/chrome-devtools) and the tests were done using the following screen sizes:
 * Samsung Note 10
 * Samsung S9+
 * Iphone 5/SE
@@ -12,7 +12,7 @@ Manual testing was carried out in different browsers and screen sizes to ensure 
 Summary of the testing result can be found [here](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Responsiveness.JPG). 
  
 #### Browser Compatibility Testing
-Browser testing was done using below browsers to ensure website can be viewed for all users. The website is responsive on all browsers except for the IE, the entire sites' margin and spacing was all over the place since IE didn't support the Bootstrap grid.
+Browser testing was done using below browsers to ensure website can be viewed for all users. The website is responsive on all browsers except for the IE, the adding an image button overlaps in small screen. 
 
 * Chrome
 * Firefox
@@ -20,9 +20,9 @@ Browser testing was done using below browsers to ensure website can be viewed fo
 * Safari
 * IE
 
-## Code Testing
+## Code Validation
 
-### Testing of Python Code:
+### Validation of Python Code:
 
 #### app.py 
 
@@ -32,7 +32,12 @@ Browser testing was done using below browsers to ensure website can be viewed fo
 - Used [pep8online.com](http://pep8online.com/checkresult)
   - The online PEP8 check returned 0 errors or warnings
 
-### Testing for CSS
+
+### Validation for jQuerry
+
+- jQuerry code was validated using [jshint](https://jshint.com/) with 0 error.
+
+### Validation for CSS
 
 - CSS was validated using [W3C](https://jigsaw.w3.org/css-validator/)
 
@@ -40,7 +45,7 @@ Browser testing was done using below browsers to ensure website can be viewed fo
 ![Css](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/CSS%20Validation.JPG)
 
 
-### Testing for HTML
+### Validation for HTML
 
 - HTML was validated using [validator](https://validator.w3.org/). 
   - I did "CTRL + U" in Google Chrome then copied the codes. 

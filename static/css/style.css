@@ -110,6 +110,11 @@ html {
     margin: 5px;
 }
 
+.btn-large, .btn {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
 /*-- collapsible --*/
 
 .collapsible-header .col strong {

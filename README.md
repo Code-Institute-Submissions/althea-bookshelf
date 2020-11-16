@@ -88,28 +88,30 @@ For more details please click [wireframe](https://github.com/gideongannaban/alth
 # Technologies used
 
 ## Languages
-* [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
-* [CSS](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics)
-* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-* [Python](https://www.python.org/)
+* [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) - To create the structure and content of the page
+* [CSS](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics) - Used to style the website
+* [jQuery](https://jquery.com/) - jQuery came with Materialize to make the components used responsive.
+* [Python](https://www.python.org/) - Primary tool used to create function 
 
 ## Libraries and Technologies
-* [jQuery](https://jquery.com/)
-* [Materialize](https://materializecss.com/)
-* [MongoDB Atlas](https://account.mongodb.com/account/login)
-* [PyMongo](https://pypi.org/project/pymongo/)
-* [Flask](https://flask.palletsprojects.com/en/1.1.x/)
-* [Jinja](https://jinja.palletsprojects.com/en/2.11.x/)
-* [Font Awesome](https://fontawesome.com/)
-* [Google Fonts](https://fonts.google.com/)
-* [Git](https://git-scm.com/)
-* [Github](https://github.com/)
-* [Heroku](https://dashboard.heroku.com/)
-* [Trello](https://trello.com/b/a3dsnJ58/ms2-project)
-* [Cloudinary](https://cloudinary.com)
-* [Favicon](https://favicon.io/)
+* [Materialize](https://materializecss.com/) - Used to create a responsive mobile-first design and include functioning components.
+* [MongoDB Atlas](https://account.mongodb.com/account/login) - The document database used for the project
+* [PyMongo](https://pypi.org/project/pymongo/) - The PyMongo library allows interaction with the MongoDB database through Python
+* [Flask](https://flask.palletsprojects.com/en/1.1.x/) - A web framework used to provide tools, libraries, and technologies for the application
+* [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) - It is a text-based template language and thus can be used to generate any markup as well as source code.
+* [Font Awesome](https://fontawesome.com/) - I used the font awesome icons for the social media, location and contact details
+* [Google Fonts](https://fonts.google.com/) - Used to style the fonts of the website
+* [Git](https://git-scm.com/) - Git was used for version control by utilizing the Gitpod terminal to commit to Git and push to GitHub.
+* [Github](https://github.com/) - GitHub is used to store the project code after being pushed from Git.
+* [Heroku](https://dashboard.heroku.com/) - Heroku was used to deploy the project
+* [Trello](https://trello.com/b/a3dsnJ58/ms2-project) - Tools used for project management
+* [Cloudinary](https://cloudinary.com) - Used to convert images to url so it can be stored in Mongo DB
+* [Favicon](https://favicon.io/) - Tool used to generate the website icon
+* [Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/) - Used to authenticate password
 
 # Features
+
+## Existing Features
 * Users can create an account and log in
 * Users can add a book 
 * Users can edit and delete book they've added
@@ -117,7 +119,7 @@ For more details please click [wireframe](https://github.com/gideongannaban/alth
 * Users can comment to the other books already added
 * Users can update and delete each comments added
 
-## Existing Features
+
 There are 2 user views currently for the website, unregistered Users and Registered Users.
 
 ### Unregistered Users

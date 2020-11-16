@@ -3,15 +3,17 @@
 
     <!-- Adding a feedback section -->  
     <div class="container">
-        <form method="POST" action="{{ url_for('add_review', book_id=book._id) }}">
+        <form method="POST" action="{{ url_for('add_review', book_id=book._id) }}" id="form">
             <div class="row">
                 <div class="col s12 m12">
                     <label for="user_review">
                         <h5>Please add your review.</h5> 
                     </label>
                     <textarea placeholder="Input text here.. max of 500 characters" id="user_review" name="user_review" 
-                        minlength="8" maxlength="500" rows="3" required></textarea>           
-                
+                        minlength="8" maxlength="500" rows="3" pattern="^[a-zA-Z0-9\s]{8,500}$" required></textarea>           
+
+                    <span id="error" class="error"></span><br>
+
                     <a href="{{ url_for('get_books') }}" class="btn-large waves-light 
                         waves-effect accent-4 green">
                         Back<i class="fas fa-times-circle right"></i>
