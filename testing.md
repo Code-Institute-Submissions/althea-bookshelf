@@ -9,7 +9,7 @@ Manual testing was carried out in different browsers and screen sizes to ensure 
 * Ipad/Ipad Pro
 * Laptop 1024px
 
-Summary of the testing result can be found [here]. 
+Summary of the testing result can be found [here](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Responsiveness.JPG). 
  
 #### Browser Compatibility Testing
 Browser testing was done using below browsers to ensure website can be viewed for all users. The website is responsive on all browsers except for the IE, the entire sites' margin and spacing was all over the place since IE didn't support the Bootstrap grid.
@@ -35,13 +35,19 @@ Browser testing was done using below browsers to ensure website can be viewed fo
 ### Testing for CSS
 
 - CSS was validated using [W3C](https://jigsaw.w3.org/css-validator/)
-> insert css screenshot
+
+
+![Css](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/CSS%20Validation.JPG)
+
 
 ### Testing for HTML
 
 - HTML was validated using [validator](https://validator.w3.org/). 
   - I did "CTRL + U" in Google Chrome then copied the codes. 
-> insert HTML screenshot
+
+
+![HTML](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/HTML%20Validation.JPG)
+
 
 ## Testing User Stories
 
@@ -76,7 +82,31 @@ Manual testing was done using Samsung Note 10, Sony Z5 and Iphone 5 by family me
 
 ### Google Chrome Dev Lighthouse
 [Lighthouse](https://developers.google.com/web/tools/lighthouse) was done to test the quality of the web pages. 
-> Insert lighthouse screenshot
+
+
+![lighthouse](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Lighthouse.JPG)
+
 
 # Bugs:
+
+The journey of this website is not with-out bugs either minor or major ones. These are some of the ones that took me sometime to debug. 
+
+* I created a function to remove a book in the database however every time I do so only the 1st item in the list is being removed instead of the specific item I wanted. The function was working fine initially, I was able to remove any item from the list. I encounter the "problem" when I added the modal boilerplate for the delete button. 
+
+ Resolution: 
+   - I tried my best to resolve this by going over my codes but I was having a difficult time pinpointing the error. When I raised it over in Slack, Igor pointed what I was missing. Apparently I was missing the {{ loop.index }} which should have been added in the ID of the modal. I went over to the Thorin Project Module to refresh my memory and lo and behold it was actually discussed on that module. Everything was working fine after I added {{ loop.index }} to the modal ID and trigger. 
+
+* I created a function that will display the user's list of added books to the database however when I try to register a new profile I was getting below error message from werkzeug-debugger. I went over my code testing every bit of it by deleting and changing however I hit a wall then reached out to the Tutors. 
+
+Resolution:
+  - With Tim's guidance, I modified my code to just find the username from my mongo db instead of the session user. 
+
+> insert profie error pix 
+
+* I wanted to add an option for the user to include a photo of the books that they are adding in the database. I am trying to user Cloudinary to convert the images to url so that it will be stored in the database. But everytime I do so it was giving me the error below.
+
+Resolution:
+  - I added "enctype="multipart/form-data"" in my form classes but the images were still not loading on the website. I then realized that the album name in Cloudinary should match my key in the app.py. I created a new album in cloudinary and named it "Photo" and this successfully loaded the images. 
+
+> insert cloudinary pix 
 

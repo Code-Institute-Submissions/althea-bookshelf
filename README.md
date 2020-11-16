@@ -122,51 +122,51 @@ There are 2 user views currently for the website, unregistered Users and Registe
 
 ### Unregistered Users
 * Home 
-- As an unregistered users, they can search for a specific books from search area. 
-- They can see the list of books added on the database
+  - As an unregistered users, they can search for a specific books from search area. 
+  - They can see the list of books added on the database
 
 * The logo 
-- Allows the users to go back to the home page
+  - Allows the users to go back to the home page
 
 * Register 
-- Allows users to create a new profile. Once created, they will be entitled to additional functionality.
-- They would need to create a username, password, their toddler's name and age.
-- Upon successful registration they will be redirected to the Profile Page
+  - Allows users to create a new profile. Once created, they will be entitled to additional functionality.
+  - They would need to create a username, password, their toddler's name and age.
+  - Upon successful registration they will be redirected to the Profile Page
 
 * Log in
-- Allow users to login to their profile for complete functionality
+  - Allow users to login to their profile for complete functionality
 
 ### Registered Users
 * Home 
-- The users can search for a specific books from the search area.
-- The users can see the list of added on the database
-- The users can add a review of the books already added 
-- The users can update and/or delete the reviews they've added
-- If the users have already added a book, they would have the ability to delete and/or update it
+  - The users can search for a specific books from the search area.
+  - The users can see the list of added on the database
+  - The users can add a review of the books already added 
+  - The users can update and/or delete the reviews they've added
+  - If the users have already added a book, they would have the ability to delete and/or update it
 
 * The logo 
-- Allows the users to go back to the home page
+  - Allows the users to go back to the home page
 
 * profile
-- Allows users to view the list of books they've added and their profile details
-- Users will have the ability to delete added books from their profile
-- Users will have the ability to delete their account when they wish to.
+  - Allows users to view the list of books they've added and their profile details
+  - Users will have the ability to delete added books from their profile
+  - Users will have the ability to delete their account when they wish to.
 
 * Add Book
-- Allows the users to add book by filling out the add book form.
+  - Allows the users to add book by filling out the add book form.
 
 ## Features Left to Implement
 * Contact form
-- This will allow the users to contact the site owner for any feedback and recommendations
+  - This will allow the users to contact the site owner for any feedback and recommendations
 
 * Store Link
-- Add a link where the users can suggest how to purchase the books they've added 
+  - Add a link where the users can suggest how to purchase the books they've added 
 
 * Admin User
-- This will allow the site owner to delete in-appropriate books added or reviews
+  - This will allow the site owner to delete in-appropriate books added or reviews
 
 * Category
-- Add a category based on age group and part of the day the books are best to be read
+  - Add a category based on age group and part of the day the books are best to be read
 
 # Testing
 For testing procedure please click [Testing.md](https://github.com/gideongannaban/althea-bookshelf/blob/master/testing.md)
@@ -240,15 +240,15 @@ The project was deployed in Heroku by following below procedure:
 * Make sure Git Bash App is downloaded in your laptop/desktop
 * Paste the Cloned link using the "Git Bash here" option.
 
-![gitbash](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/gitbash.png)
+![gitbash](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Deployment/gitbash.png)
 
 4. Type "git clone" in the Git Bash command page, then paste the URL you copied.
 
-![gitclone](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/gitclone.JPG)
+![gitclone](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Deployment/gitclone.JPG)
 
 5. Press Enter to create the local clone. 
 
-![local clone](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/localclone.JPG)
+![local clone](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/Deployment/localclone.JPG)
 
 Click [Here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository) for additional details and more detailed explanation of the process.
 
@@ -271,4 +271,4 @@ Main source of inspiration for all my projects is our 2 years old daughter and m
 Thanks to my mentor [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/) for guidance on the project and for
 providing online literature.
 
-Thanks to [Tim](https://github.com/TravelTimN) for letting me preview the updated videos of the mini project Task Manager. Large parts project functionality were picked up from these videos.
+Thanks to [Tim](https://github.com/TravelTimN) for letting me preview the updated videos of the mini project Task Manager. Large parts project functionality were picked up from these videos and kudos to all the Tutors and Leads who patiently guided me when I didn't what to do. 
