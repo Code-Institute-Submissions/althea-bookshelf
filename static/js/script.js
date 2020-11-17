@@ -18,22 +18,3 @@ $(document).ready(function(){
 setTimeout(function () {
     $(".flashes").fadeOut('slow');
   }, 5000);
-
-// To validate when user will only enter white spaces
-
-const review = document.getElementById("user_review")
-const form = document.getElementById("form")
-const errorElement = document.getElementById("error")
-
-form.addEventListener("submit", (e) => {
-    let message = []
-    if (review.value === "" | review.value === null) {
-        message.push("Please add your comments")
-    }
-
-    if (messages.length > 0 ) {
-        e.preventDefault()
-        errorElement.innerText = messages.join(', ')
-    }
-})
-

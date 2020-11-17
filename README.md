@@ -254,13 +254,34 @@ The project was deployed in Heroku by following below procedure:
 
 Click [Here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository) for additional details and more detailed explanation of the process.
 
+## Setting up you Environment variables
+* Create a file called .gitignore in the root directory of your project
+* Add text "env.py" in the .gitignore file
+* Then create a file called env.py. This will contain all your environment variables
+* In env.py, add the following information.  
+
+  - SECRET_KEY - This is the secret key required by flask. 
+  - MONGO_URI - You'll need add your root password after the word "root:" and your collections name after "mongodb.net/"
+  - MONGO_DBNAME - This is the name of your collections in MongoDB
+
+
+* Don,t forget to reinstall your requirements.txt so this will be configured properly with Heroku then git commit and git push your file. 
+
+import os
+
+os.environ.setdefault("IP", "0.0.0.0")
+os.environ.setdefault("PORT", "5000")
+os.environ.setdefault("SECRET_KEY", "****************************")
+os.environ.setdefault("MONGO_URI", "mongodb+srv://root:*************@cluster0.nwokc.mongodb.net/***************?retryWrites=true&w=majority")
+os.environ.setdefault("MONGO_DBNAME", "********************")
+
 # Credits
 
 ## Content 
 * [Materialize 1.0.0:](https://materializecss.com/)Materialize Library used throughout the project, components used include the grid System, forms, buttons, modals, navbar, dropdown, side nav, tabs, carousel, cards, toasts, and tooltips.
 
 * These websites contain great source of inspiration and solution whenever I encounter an error or just looking for a better way of presenting my idea:
-- [W3schools](https://www.w3schools.com/)
+- [W3schools](https://www.w3schools.com/) 
 - [Youtube](https://www.youtube.com/)
 - [stackoverflow](https://stackoverflow.com/)
 
