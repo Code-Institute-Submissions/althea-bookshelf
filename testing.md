@@ -115,3 +115,7 @@ Resolution:
 
 ![cloudinary](https://github.com/gideongannaban/althea-bookshelf/blob/master/Readme/Images/cloudinary.JPG)
 
+* Before submitting the project, I did a final check and lo and behold the modal and collapsible was not working properly. Nothing is happening when I click it and I don't see any error message on my command line. 
+
+Resolution:
+  - Checked Chrome Dev Tool and its giving me an error with jQuerry "Uncaught TypeError: $(...).sidenav is not a function". Checked on my Heroku Deployed page with the help of Tutor Igor and it was working fine. Igor suggested to stop and start the workspace and this fixed the bug. 

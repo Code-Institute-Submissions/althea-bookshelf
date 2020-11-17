@@ -270,9 +270,14 @@ Click [Here](https://docs.github.com/en/free-pro-team@latest/github/creating-clo
 import os
 
 os.environ.setdefault("IP", "0.0.0.0")
+
 os.environ.setdefault("PORT", "5000")
+
 os.environ.setdefault("SECRET_KEY", "****************************")
-os.environ.setdefault("MONGO_URI", "mongodb+srv://root:*************@cluster0.nwokc.mongodb.net/***************?retryWrites=true&w=majority")
+
+os.environ.setdefault("MONGO_URI", "mongodb+srv://root:*************@cluster0.nwokc.mongodb.net/***************?
+retryWrites=true&w=majority")
+
 os.environ.setdefault("MONGO_DBNAME", "********************")
 
 # Credits
@@ -281,9 +286,9 @@ os.environ.setdefault("MONGO_DBNAME", "********************")
 * [Materialize 1.0.0:](https://materializecss.com/)Materialize Library used throughout the project, components used include the grid System, forms, buttons, modals, navbar, dropdown, side nav, tabs, carousel, cards, toasts, and tooltips.
 
 * These websites contain great source of inspiration and solution whenever I encounter an error or just looking for a better way of presenting my idea:
-- [W3schools](https://www.w3schools.com/) 
-- [Youtube](https://www.youtube.com/)
-- [stackoverflow](https://stackoverflow.com/)
+- [W3schools](https://www.w3schools.com/) - How to adust media query for smaller screens
+- [stackoverflow](https://stackoverflow.com/) - Tips on how to connect Cloudinary
+- [HTML Dog](https://htmldog.com/techniques/404/) - for the 404 error page
 
 * Favicon logo was create from [canva](https://www.canva.com/)
 * All text are written by myself
